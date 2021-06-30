@@ -1,7 +1,7 @@
 <!-- .footer -->
 <footer class="footer js-scroll">
     <!-- .messageBlock -->
-    <div class="messageBlock">
+    <!--<div class="messageBlock">
         <div class="cols">
             <div class="col-12">
                 <p>degrees magazine は、CURBONがおくる<br>写真に関する新しいWEBメディア。</p>
@@ -10,10 +10,10 @@
              
             </div>
         </div>
-    </div>
-    <div class="bgc-lightgray pb30">
+    </div>-->
+    <div class="bgc-black ptb60">
         <!-- バナー郡 -->
-        <div class="cols ptb30 sm-ptb20">
+        <!--<div class="cols ptb30 sm-ptb20">
             <div class="col-12">
                 <div class="cols nega gutter-30 gutter-sm-20">
                     <div class="col-4 col-sm-6 pt30 sm-pt20"><a href="" class="hov"><img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/bnrB1.jpg" width="606" height="184" alt=""></a></div>
@@ -24,17 +24,22 @@
                     <div class="col-4 col-sm-6 pt30 sm-pt20"><a href="" class="hov"><img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/bnrB6.jpg" width="606" height="184" alt=""></a></div>
                 </div>
             </div>
-        </div>
-        <nav class="cols">
+        </div>-->
+        <nav class="cols ai-c">
             <div class="col-12">
-                <!-- .footer-subLink -->
-                <div class="footer-subLink">
-                    <ul>
-                        <li><a href="https://www.curbon.jp/" target="_blank" rel="noopener" class="hov">運営会社</a></li>
-                        <li><a href="https://www.curbon.jp/pages/terms" target="_blank" rel="noopener" class="hov">利用規約</a></li>
-                        <li><a href="https://www.curbon.jp/pages/privacy" target="_blank" rel="noopener" class="hov">プライバシーポリシー</a></li>
-                        <li><a href="https://www.curbon.jp/pages/commercial-act" target="_blank" rel="noopener" class="hov">特定商取引法に基づく表記</a></li>
-                    </ul>
+                <div class="d-f jc-c sm-d-b ai-c ta-c">
+                    <a href="<?php echo home_url(); ?>/" class="hov">
+                        <img src="<?php echo home_url(); ?>/img/common/logo-w.png" width="139" height="38" alt="">
+                    </a>
+                    <!-- .footer-subLink -->
+                    <div class="footer-subLink ml50 pl50 sm-ml0 sm-pl0 sm-mt30">
+                        <ul>
+                            <li><a href="https://www.curbon.jp/" target="_blank" rel="noopener" class="hov">運営会社</a></li>
+                            <li><a href="https://www.curbon.jp/pages/terms" target="_blank" rel="noopener" class="hov">利用規約</a></li>
+                            <li><a href="https://www.curbon.jp/pages/privacy" target="_blank" rel="noopener" class="hov">プライバシーポリシー</a></li>
+                            <li><a href="https://www.curbon.jp/pages/commercial-act" target="_blank" rel="noopener" class="hov">特定商取引法に基づく表記</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>

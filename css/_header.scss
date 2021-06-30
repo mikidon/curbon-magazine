@@ -106,7 +106,7 @@
 						height: 100%;
 						padding: 0 2em;
 						font-size: 14px;
-						font-weight: bold;
+						font-family: $en1;
 						line-height: 1.2;
 						letter-spacing: .01em;
 						transition: background-color 100ms ease-out;
@@ -178,7 +178,7 @@
 					}
 					a {
 						font-size: 18px;
-						font-weight: bold;
+						font-family: $en1;
 						line-height: 1.2;
 						letter-spacing: .1em;
 						@extend .hov;
@@ -211,7 +211,7 @@
 					}
 					> a {
 						font-size: 15px;
-						font-weight: bold;
+						font-family: $en1;
 						@extend .hov;
 						@include mq(sm) {
 							font-size: 12px;

@@ -4,7 +4,6 @@
         <h1 class="logo">
             <a href="<?php echo home_url(); ?>/" class="hov">
                 <img src="<?php echo home_url(); ?>/img/common/logo.png" width="139" height="38" alt="">
-                <span class="logo-read">写真から始まる<br>豊かな暮らし</span>
             </a>
         </h1>
         <nav class="gnav">

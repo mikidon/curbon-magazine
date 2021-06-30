@@ -98,7 +98,7 @@
                 </div>
             </div>
         </div>
-        <div class="cols jc-c pt60 js-scroll">
+        <!--<div class="cols jc-c pt60 js-scroll">
             <div class="col-12">
                 <div class="cols jc-c nega gutter-10 mt-10">
                     <div class="col-3 col-md-6 col-sm-10 pt10"><a href="" class="hov"><img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/bnrA1.jpg" width="232" height="92" alt="人気連載 さらお、カメラ買う。"></a></div>
@@ -107,7 +107,7 @@
                     <div class="col-3 col-md-6 col-sm-10 pt10"><a href="" class="hov"><img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/bnrA4.jpg" width="232" height="92" alt="新商品ができました！"></a></div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </main>
     <?php get_footer(); ?>
 </body>

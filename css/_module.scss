@@ -34,19 +34,48 @@
 /* .btn */
 .btn-round {// 角丸のボタン
 	display: block;
-	border: 2px solid $black;
-	border-radius: 9999px;
-	max-width: 400px;
+	background: $black;
+	color: $white;
+	max-width: 340px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 15px 40px;
 	font-weight: bold;
 	line-height: 1.2;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		background: $white;
+		right: 30px;
+		top: calc(50% - 3.5px);
+		border-radius: 9999px;
+		width: 5px;
+		height: 5px;
+	}
+	&:hover {
+		transition: all .8s;
+		text-decoration: none;
+		&::before {
+			transition: all .8s;
+			right: 40px;
+		}
+	}
 }
 
 .btn-block {// ブロックボタン
 	display: inline-block;
-	border: 2px solid $black;
+	border: 1px solid $black;
+	padding: 10px 30px;
+	font-family: $en1;
+	font-style: italic;
+	line-height: 1.2;
+	letter-spacing: .2em;
+}
+.btn-block-black {// ブロックボタン-黒
+	display: inline-block;
+	background: $black;
+	color: $white;
 	padding: 10px 30px;
 	font-family: $en1;
 	font-style: italic;

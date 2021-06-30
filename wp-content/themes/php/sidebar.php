@@ -46,11 +46,12 @@
     </nav>
     <!-- .sidebar-bnr -->
     <div class="sidebar-bnr mt30">
-        <ul>
+        <p class="ta-c fz90">バナーが入る予定</p>
+        <!--<ul>
             <li><a href="" class="slidebar-bnr-item hov"><img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/bnrA1.jpg" width="232" height="92" alt="人気連載 さらお、カメラ買う。"></a></li>
             <li><a href="" class="slidebar-bnr-item hov"><img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/bnrA2.jpg" width="232" height="92" alt="#超えるぞ2021 フォトコンテスト"></a></li>
             <li><a href="" class="slidebar-bnr-item hov"><img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/bnrA3.jpg" width="232" height="92" alt="Artist Interview"></a></li>
             <li><a href="" class="slidebar-bnr-item hov"><img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/bnrA4.jpg" width="232" height="92" alt="新商品ができました！"></a></li>
-        </ul>
+        </ul>-->
     </div>
 </aside>

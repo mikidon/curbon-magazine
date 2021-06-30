@@ -43,9 +43,9 @@ body {
 
 /* .content */
 .content {
-	padding-bottom: 90px;
+	padding-bottom: 130px;
 	@include mq(sm) {
-		padding-bottom: 60px;
+		padding-bottom: 80px;
 	}
 }
 
@@ -61,9 +61,9 @@ body {
 @mixin style-categoryTag {
 	display: inline-block;
 	background-color: $white;
-	border: 2px solid $black;
-	padding: 6px 20px;
-	font-weight: bold;
+	border: 1px solid $black;
+	padding: 6px 15px;
+	font-family: $en1;
 	line-height: 1;
 	letter-spacing: .1em;
 	@include mq(sm) {
@@ -74,11 +74,10 @@ body {
 
 // style-dateText：記事の日付用のスタイル
 @mixin style-dateText {
-	font-family: $en2;
-	font-size: 15px;
+	font-family: $en1;
+	font-size: 14px;
 	font-style: italic;
 	line-height: 1;
-	letter-spacing: .15em;
 	@include mq(sm) {
 		font-size: 11px;
 	}
@@ -114,18 +113,16 @@ body {
 					}
 				}
 				&-category {
-					font-family: $ja;
-					font-size: 15px;
+					font-family: $en1;
+					letter-spacing: .1em;
+					font-size: 14px;
 					line-height: 1.2;
 					@include mq(sm) {
 						font-size: 13px;
 					}
 				}
 				&-ttl {
-					margin-top: 20px;
-					@include mq(sm) {
-						margin-top: 10px;
-					}
+					margin-top: 5px;
 					span {
 						display: inline-block;
 						background-color: $white;
@@ -141,9 +138,9 @@ body {
 				}
 				&-btn {
 					display: inline-block;
-					border: 2px solid $white;
+					border: 1px solid $white;
 					padding: 10px 20px;
-					font-family: $en2;
+					font-family: $en1;
 					font-style: italic;
 					color: $white;
 					line-height: 1;
@@ -210,12 +207,11 @@ body {
 			}
 			&-item {
 				display: block;
-				border-top: 2px solid $black;
-				border-right: 2px solid $black;
-				border-left: 2px solid $black;
-				border-radius: 10px 10px 0 0;
+				border-top: 1px solid $black;
+				border-right: 1px solid $black;
+				border-left: 1px solid $black;
 				padding: 18px 40px;
-				font-weight: bold;
+				font-family: $en1;
 				line-height: 1;
 				letter-spacing: .1em;
 				text-align: center;
@@ -224,8 +220,7 @@ body {
 					padding: 18px 20px;
 				}
 				@include mq(sm) {
-					border: 2px solid $black;
-					border-radius: 10px;
+					border: 1px solid $black;
 					padding: 12px 10px;
 					font-size: 13px;
 				}
@@ -236,13 +231,11 @@ body {
 			}
 		}
 		&-main {
-			border: 2px solid $black;
-			border-radius: 10px;
+			border: 1px solid $black;
 			padding: 80px 0;
 			overflow: hidden;
 			@include mq(sm) {
 				border: none;
-				border-radius: 0;
 				margin: 0 -20px;
 				padding: 20px 0 0;
 			}
@@ -253,8 +246,7 @@ body {
 		position: relative;
 		&::after {
 			content: "";
-			background-color: $yellow;
-			border-bottom-left-radius: 80px;
+			background: url(../img/common/bgi-dot.png) 0 0 / 7px 7px repeat;
 			width: 80%;
 			height: 340px;
 			position: absolute;
@@ -263,7 +255,7 @@ body {
 			z-index: -1;
 			@include mq(sm) {
 				width: calc(100% - 20px);
-				height: 285px;
+				height: 525px;
 			}
 		}
 		&-info {
@@ -289,9 +281,6 @@ body {
 			line-height: 1.2;
 			letter-spacing: .2em;
 		}
-		&-read {
-			font-weight: bold;
-		}
 		&-btn {
 			margin-top: 20px;
 			@include mq(sm) {
@@ -311,10 +300,10 @@ body {
 				background-color: $white;
 			}
 			&-info {
-				padding: 30px 20px 20px;
+				padding: 45px 25px 50px;
 				position: relative;
 				@include mq(sm) {
-					padding: 25px 15px 20px;
+					padding: 30px 20px 30px;
 				}
 				&::before {
 					content: counter(slide, decimal-leading-zero);
@@ -327,8 +316,8 @@ body {
 					top: -.5em;
 					left: 20px;
 					@include mq(sm) {
-						font-size: 25px;
-						left: 15px;
+						font-size: 35px;
+						left: 20px;
 					}
 				}
 			}
@@ -342,8 +331,9 @@ body {
 			&-category {
 				@include style-categoryTag;
 				position: absolute;
-				top: 20px;
-				right: -15px;
+				top: 10px;
+				border-radius: 9999px;
+				right: -10px;
 				z-index: 2;
 			}
 			// .swiper
@@ -353,7 +343,7 @@ body {
 					margin: 0;
 					overflow: visible;
 					@include mq(sm) {
-						width: 160px;
+						width: 190px;
 					}
 				}
 				&-wrapper {}
@@ -378,8 +368,8 @@ body {
 						position: static;
 						&::after {
 							content: "";
-							border-top: solid 3px $black;
-							border-right: solid 3px $black;
+							border-top: solid 1.5px $black;
+							border-right: solid 1.5px $black;
 							width: 12px;
 							height: 12px;
 							transform: rotate(45deg);
@@ -409,9 +399,6 @@ body {
 			line-height: 1.2;
 			letter-spacing: .2em;
 		}
-		&-read {
-			font-weight: bold;
-		}
 		&-btn {
 			@include mq(sm) {
 				display: none;
@@ -420,7 +407,7 @@ body {
 	}
 	/* .original：CURBONオリジナルコンテンツのご紹介 */
 	.original {
-		background-color: $lightgreen;
+		background: url(../img/common/bgi-dot.png) 0 0 / 7px 7px repeat;
 		position: relative;
 		&-ttl {
 			width: 100%;
@@ -479,7 +466,7 @@ body {
 						background-color: $green;
 						margin-top: 10px;
 						padding: 8px 20px;
-						font-size: 15px;
+						font-size: 14px;
 						font-weight: bold;
 					}
 				}
@@ -534,8 +521,9 @@ body {
 			margin-top: -5px;
 			padding-top: 30px;
 			@include mq(sm) {
-				margin-top: -15px;
+				margin-top: 10px;
 				padding-top: 20px;
+				border-bottom: 1px solid #ccc;
 			}
 			&-item {
 				display: flex;
@@ -543,7 +531,8 @@ body {
 				padding: 5px 0;
 				@include mq(sm) {
 					display: block;
-					padding: 15px 0;
+					padding: 25px 0 25px 0;
+					border-top: 1px solid #ccc;
 				}
 				.info {
 					display: flex;
@@ -561,7 +550,7 @@ body {
 					padding: 10px;
 					font-family: $en1;
 					font-style: italic;
-					font-size: 15px;
+					font-size: 14px;
 					line-height: 1;
 					letter-spacing: .1em;
 					text-align: center;
@@ -592,7 +581,7 @@ body {
 
 /* .contentTtl：コンテンツ上部の英字タイトル */
 .contentTtl {
-	font-family: $en2;
+	font-family: $en1;
 	font-size: 20px;
 	line-height: 1.2;
 	letter-spacing: .2em;
@@ -607,7 +596,7 @@ body {
 	align-items: center;
 	input[type="search"] {
 		display: block;
-		border: 2px solid #000;
+		border: 1px solid #000;
 		border-radius: 9999px;
 		width: 100%;
 		padding: 15px 20px;
@@ -648,12 +637,12 @@ body {
 
 /* .hotWords：登録数の多いタクソノミーを表示 */
 .hotWords {
-	background-color: $lightgray;
+	background-color: $black;
 	padding: 50px;
 	@include mq(sm) {
 		margin-left: -20px;
 		margin-right: -20px;
-		padding: 20px;
+		padding: 60px 25px;
 	}
 	&-ttl {
 		font-family: $en1;
@@ -661,25 +650,23 @@ body {
 		font-style: italic;
 		line-height: 1.2;
 		letter-spacing: .1em;
+		color: $white;
 	}
 	&-tags {
 		display: flex;
 		flex-wrap: wrap;
 		margin-top: -10px;
 		padding-top: 30px; 
-		@include mq(sm) {
-			padding-top: 20px;
-		}
 		li {
 			margin: 10px 10px 0 0;
 		}
 		&-item {
 			display: inline-block;
-			background-color: $black;
+			background-color: $white;
 			border-radius: 9999px;
 			padding: 10px 20px;
 			font-weight: bold;
-			color: $white;
+			color: $black;
 			line-height: 1;
 		}
 	}
@@ -726,7 +713,7 @@ body {
 		margin-top: auto;
 	}
 	&-ttl {
-		font-family: $en2;
+		font-family: $en1;
 		font-size: 40px;
 		line-height: 1.2;
 		letter-spacing: .2em;
@@ -757,9 +744,9 @@ body {
 	}
 	&-btn {
 		display: inline-block;
-		border: 2px solid $white;
+		border: 1px solid $white;
 		padding: 10px 20px;
-		font-family: $en2;
+		font-family: $en1;
 		font-style: italic;
 		color: $white;
 		line-height: 1;
@@ -791,7 +778,7 @@ body {
 		margin-top: -60px;
 		position: relative;
 		@include mq(sm) {
-			margin-top: -20px;
+			margin-top: 0px;
 		}
 		&::before,
 		&::after {// 見た目調整用
@@ -837,20 +824,10 @@ body {
 		&-item {
 			display: block;
 		}
-		&-thumb {
-			img {
-				border: 1px solid $gray;
-			}
-		}
 		&-subInfo {
 			display: flex;
 			align-items: center;
 			margin-top: 20px;
-			@include mq(sm) {
-				flex-direction: column;
-				align-items: flex-start;
-				margin-top: 10px;
-			}
 		}
 		&-category {
 			@include style-categoryTag;
@@ -858,10 +835,6 @@ body {
 		&-date {
 			@include style-dateText;
 			padding-left: 15px;
-			@include mq(sm) {
-				padding-top: 10px;
-				padding-left: 0;
-			}
 		}
 		&-ttl {
 			padding-top: 20px;
@@ -873,8 +846,8 @@ body {
 		}
 		&-text {
 			padding-top: 15px;
-			font-size: 13px;
-			line-height: 1.6;
+			font-size: 12px;
+			line-height: 1.8;
 			color: #575757;
 			@include mq(sm) {
 				display: none;
@@ -936,15 +909,10 @@ body {
 				}
 			}
 		}
-		&-thumb {
-			img {
-				border: 1px solid $gray;
-			}
-		}
 		&-ttl {
 			padding-top: 20px;
 			font-family: $en1;
-			font-size: 15px;
+			font-size: 14px;
 			font-style: italic;
 			line-height: 1.2;
 			letter-spacing: .15em;
@@ -978,13 +946,10 @@ body {
 		}
 		&-thumb {
 			position: relative;
-			img {
-				border: 1px solid $gray;
-			}
 		}
 		&-category {
 			display: block;
-			padding: 8px 20px;
+			padding: 8px 10px;
 			font-size: 13px;
 			font-weight: bold;
 			color: $white;
@@ -998,7 +963,7 @@ body {
 				padding: 5px 15px;
 			}
 			&-example {
-				background-color: #f1d986;
+				background-color: #93acb5;
 			}
 			&-item {
 				background-color: #a6bfc0;
@@ -1020,11 +985,6 @@ body {
 		margin-top: -30px;
 		@include mq(sm) {
 			margin-top: -20px;
-		}
-		> * {
-			.feedNews-item {
-				border-bottom: 1px solid $gray;
-			}
 		}
 		&-item {
 			display: flex;
@@ -1262,10 +1222,9 @@ body {
 	}
 	&-date {
 		font-family: $en1;
-		font-size: 15px;
+		font-size: 14px;
 		font-style: italic;
 		line-height: 1.2;
-		letter-spacing: .15em;
 	}
 	&-category {
 		@include style-categoryTag;
@@ -1420,6 +1379,7 @@ body {
 		@extend .btn-round;
 		background-color: $lightgray;
 		max-width: 300px;
+		color: $black;
 	}
 	&-pager {
 		&-item {
@@ -1439,8 +1399,8 @@ body {
 	/* .articleNews：各記事のユニークなスタイル */
 	&News {
 		.article-uppInfo {
-			border-top: 2px solid $black;
-			border-bottom: 2px solid $black;
+			border-top: 1px solid $black;
+			border-bottom: 1px solid $black;
 			padding: 30px 0;
 			@include mq(sm) {
 				padding: 20px 0;
@@ -1460,7 +1420,7 @@ body {
 			border: none;
 			color: $white;
 			&-example {
-				background-color: #f1d986;
+				background-color: #93acb5;
 			}
 			&-item {
 				background-color: #a6bfc0;
@@ -1504,7 +1464,7 @@ body {
 			}
 		}
 		&-label {
-			font-family: $en2;
+			font-family: $en1;
 			font-size: 16px;
 			line-height: 1.2;
 			letter-spacing: .1em;

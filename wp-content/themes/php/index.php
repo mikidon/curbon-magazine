@@ -91,7 +91,7 @@
                 <?php wp_reset_postdata(); ?>
             </div>
         </div>
-        <div class="cols cols-wide pt90 sm-pt60 js-scroll">
+        <div class="cols cols-wide pt120 sm-pt80 js-scroll">
             <div class="col-12">
                 <!-- .tabContents -->
                 <div class="tabContents">
@@ -339,16 +339,16 @@
             </div>
         </div>
         <!-- .ranking -->
-        <section class="ranking cols-filld-full pt120 sm-pt90 js-scroll">
+        <section class="ranking cols-filld-full pt150 sm-pt120 js-scroll">
             <div class="col-4 col-sm-12">
                 <div class="ranking-info">
                     <div>
-                        <h2 class="ranking-ttl">RANKIING</h2>
+                        <h2 class="ranking-ttl">RANKING</h2>
                         <div class="ranking-info-inner">
                             <p class="ranking-read">いま人気の記事<br>
                                 おすすめの記事はこちら</p>
                             <div class="ranking-btn">
-                                <a href="<?php echo home_url(); ?>/ranking" class="btn-block hov">ALL VIEW</a>
+                                <a href="<?php echo home_url(); ?>/ranking" class="btn-block-black hov">ALL VIEW</a>
                             </div>
                         </div>
                     </div>
@@ -441,7 +441,8 @@
                 </div>
             </div>
         </div>
-        <div class="cols jc-c pt60 js-scroll">
+        <!-- .bnr -->
+        <!--<div class="cols jc-c pt60 js-scroll">
             <div class="col-12">
                 <div class="cols jc-c nega gutter-10 mt-10">
                     <div class="col-3 col-md-6 col-sm-10 pt10"><a href="" class="hov"><img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/bnrA1.jpg" width="232" height="92" alt=""></a></div>
@@ -450,7 +451,7 @@
                     <div class="col-3 col-md-6 col-sm-10 pt10"><a href="" class="hov"><img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/bnrA4.jpg" width="232" height="92" alt=""></a></div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- .review -->
         <section class="review pt120 sm-pt90 js-scroll">
             <div class="cols">
@@ -461,7 +462,7 @@
                         <div class="review-info-inner">
                             <p class="review-read">豊富な作例から<br class="d-n sm-d-i">運命のカメラ・レンズ・フィルムを見つけよう</p>
                             <div class="review-btn">
-                                <a href="<?php echo home_url(); ?>/review" class="btn-block hov">ALL VIEW</a>
+                                <a href="<?php echo home_url(); ?>/review" class="btn-block-black hov">ALL VIEW</a>
                             </div>
                         </div>
                     </div>
@@ -496,18 +497,26 @@
                         <?php wp_reset_postdata(); ?>
                     </div>
                     <div class="d-n sm-d-b pt40 ta-c">
-                        <a href="<?php echo home_url(); ?>/review" class="btn-block hov">ALL VIEW</a>
+                        <a href="<?php echo home_url(); ?>/review" class="btn-block-black hov">ALL VIEW</a>
                     </div>
                 </div>
             </div>
         </section>
         <!-- .original -->
-        <section class="original mt150 ptb50 js-scroll">
+        <section class="original mt150 ptb100 js-scroll">
+            <h2 class="original-ttl">GALLERY</h2>
+            <div class="cols">
+                <div class="col-12">
+                    <p class="ta-c">内容かたまり次第バナー・リンク設置</p>
+                </div>
+            </div>
+        </section>
+        <!-- .original -->
+        <!--<section class="original mt150 ptb50 js-scroll">
             <h2 class="original-ttl">ORIGINAL CONTENTS</h2>
             <div class="cols">
                 <div class="col-12">
                     <p class="fw-b ta-c">写真について学びたいひと、<br class="d-n sm-d-i">写真を仕事にしたいひとのための<br class="d-n sm-d-i">オリジナルコンテンツのご紹介。</p>
-                    <!-- .originalSlide -->
                     <div class="originalSlide mt45">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
@@ -553,15 +562,15 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!-- .topNews -->
-        <section class="topNews pt90 sm-pt60 js-scroll">
+        <section class="topNews pt130 sm-pt80 js-scroll">
             <div class="cols">
                 <div class="col-12">
                     <div class="topNews-info">
                         <h2 class="topNews-ttl">News</h2>
                         <div class="topNews-btn">
-                            <a href="<?php echo home_url(); ?>/new" class="btn-block hov">ALL VIEW</a>
+                            <a href="<?php echo home_url(); ?>/new" class="btn-block-black hov">ALL VIEW</a>
                         </div>
                     </div>
                 </div>
@@ -594,7 +603,7 @@
                         <?php wp_reset_postdata(); ?>
                     </div>
                     <div class="d-n sm-d-b pt25 ta-c">
-                        <a href="<?php echo home_url(); ?>/new" class="btn-block hov">ALL VIEW</a>
+                        <a href="<?php echo home_url(); ?>/new" class="btn-block-black hov">ALL VIEW</a>
                     </div>
                 </div>
             </div>
