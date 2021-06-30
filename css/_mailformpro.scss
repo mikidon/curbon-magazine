@@ -1,0 +1,219 @@
+@charset "utf-8";
+
+//Common
+@import "_common";
+
+/*	Placeholder Color
+-------------------------------*/
+@mixin placeholder($color) {
+	&:placeholder-shown {
+		color: $color;
+	}
+	&::-webkit-input-placeholder {
+		color:$color;
+	}
+	&:-moz-placeholder {
+		color:$color;
+		opacity: 1;
+	}
+	&::-moz-placeholder {
+		color:$color;
+		opacity: 1;
+	}
+	&:-ms-input-placeholder {
+		color:$color;
+	}
+}
+
+/*	mailformpro
+-------------------------------*/
+#mailformpro {
+	/* table */
+	table {
+		width: 100%;
+	}
+	/* input, select, textarea, submit */
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	select,
+	textarea,
+	.mfp_element_submit[type="submit"], {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-start;
+		background-color: #fff;
+		border: 1px solid #eee;
+		border-radius: 3px;
+        box-shadow: none;
+		padding: 6px 10px;
+		@include placeholder(#ccc);
+		line-height: 1.5;
+		vertical-align: top;
+		position: relative;
+		@include mq(sm) { width: 100%!important; }
+	}
+	/* select */
+	.select {
+		display: inline-block;
+		position: relative;
+		&::after {
+			content: "";
+            @include arrow(10px, 2px, #333);
+            position: absolute;
+            top: calc(50% - 7px);
+            right: 16px;
+            z-index: 2;
+            pointer-events: none;
+            transform: rotate(135deg);
+		}
+		select { padding-right: 40px; }
+	}
+	/* mfp_err */
+	.mfp_err {
+		display: none;
+		padding-top: 5px;
+		clear: both;
+		font-size: 90%;
+		color: #c00;
+		text-align: left;
+		&::before {
+			content: "(!)";
+			margin-right: .25em;
+		}
+	}
+	/* mfp_buttons */
+	.mfp_buttons {
+		text-align: center;
+		.mfp_element_submit[type="submit"] {
+			justify-content: center;
+			background-color: #3273dc;
+			border: none;
+			height: auto;
+			padding: 6px 10px;
+			color: #fff;
+			cursor: pointer;
+			//@extend .hov;
+		}
+	}
+}
+
+/* for IE11 */
+@media all and (-ms-high-contrast: none) {
+	*::-ms-backdrop, #mailformpro .select::after { display: none; }
+	*::-ms-backdrop, #mailformpro .select select { padding-right: inherit; }
+}
+
+/*	mfp_overlay
+-------------------------------*/
+#mfp_overlay {
+	display: none;
+	position: absolute;
+	z-index: 10001;
+	h4 {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 120%;
+		line-height: 1.4;
+		text-align: center;
+	}
+	#mfp_overlay_inner {
+		background-color: #fff;
+		border-radius: 5px;
+		box-shadow: 0 0 10px #000;
+		width: 640px;
+        max-width: 90%;
+		margin: 0 auto;
+		padding: 15px;
+		table#mfp_confirm_table {
+			border-spacing: 0;
+			border-collapse: collapse;
+			width: 100%;
+			tr {
+				&.mfp_colored { background-color: #eee; }
+				&.mfp_achroma { background-color: #fff; }
+				th,
+				td {
+                    padding: 10px;
+					font-size: 90%;
+					font-weight: normal;
+					text-align: left;
+				}
+				th {}
+				td {
+					line-height: 1.5;
+					word-break: break-all;
+				}
+			}
+		}
+		.mfp_buttons {
+			display: flex;
+			justify-content: center;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			#mfp_button_send,
+			#mfp_button_cancel {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				display: inline-flex;
+				flex-grow: 1;
+				align-items: center;
+				justify-content: center;
+				background-color: #fff;
+				border: none;
+				border-radius: 3px;
+				box-shadow: none;
+				height: auto;
+				padding: 6px 10px;
+				font-size: 100%;
+                color: #fff;
+				line-height: 1.5;
+				vertical-align: top;
+				position: relative;
+				cursor: pointer;
+				//@extend .hov;
+			}
+			#mfp_button_send { background-color: #3273dc; }
+			#mfp_button_cancel { background-color: #ddd; }
+		}
+	}
+}
+
+/*	mfp_overlay_background
+-------------------------------*/
+#mfp_overlay_background {
+	display: none;
+	background-color: #000;
+	position: absolute;
+	z-index: 10000;
+}
+#mfp_loading_screen {
+	display: none;
+	background-color: #000;
+	position: absolute;
+	z-index: 20000;
+	opacity: .8;
+}
+
+/*	Unedited
+-------------------------------*/
+#mfp_hidden {
+	width: 1px;
+	height: 1px;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	input { margin: 10px; }
+}
+.hidefield {
+	height: 0;
+	overflow: hidden;
+}
+.showfield {
+	height: auto;
+	overflow: visible;
+}

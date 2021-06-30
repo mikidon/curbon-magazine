@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+// ver 1.3.0
+
+/*-------------------------------
+    Global Variable
+-------------------------------*/
+
+/*	function
+-------------------------------*/
+$trbl: (t:top, r:right, b:bottom, l:left);
+
+/*	Breakpoint
+-------------------------------*/
+$breakpoints: (
+    'xl': 'screen and (max-width: 1399px)',
+    'lg': 'screen and (max-width: 1279px)',
+	'md': 'screen and (max-width: 999px)',
+	'sm': 'screen and (max-width: 767px)',
+	'xs': 'screen and (max-width: 424px)'
+) !default;
+
+@mixin mq($breakpoint: md) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+/*	Font Family
+-------------------------------*/
+$ja: 'a-otf-midashi-go-mb31-pr6n';
+$en1: 'futura-pt';
+$en2: 'sofia-pro';
+
+/*	Color
+-------------------------------*/
+$colors: (
+	'black': #000,
+	'white': #fff,
+	'gray': #dadada,
+	'lightgray': #f2f2f2,
+	'green': #7f917b,
+	'lightgreen': #e5e9e5,
+	'yellow': #f1d986
+);
+$black: #000;
+$white: #fff;
+$gray: #dadada;
+$lightgray: #f2f2f2;
+$green: #7f917b;
+$lightgreen: #e5e9e5;
+$yellow: #f1d986;

@@ -1,0 +1,816 @@
+@charset "utf-8";
+
+//Common
+@import "_common";
+
+/*-------------------------------
+	Reset
+-------------------------------*/
+
+/*	Reset
+-------------------------------*/
+html, body,
+h1, h2, h3, h4, h5, h6,
+a, p, span,
+em, small, strong,
+sub, sup,
+mark, del, ins, strike,
+abbr, dfn,
+blockquote, q, cite,
+code, pre,
+ol, ul, li, dl, dt, dd,
+div, section, article,
+main, aside, nav,
+header, hgroup, footer,
+img, figure, figcaption,
+address, time,
+audio, video,
+canvas, iframe,
+details, summary,
+fieldset, form, label, legend,
+table, caption,
+tbody, tfoot, thead,
+tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/*	Typography
+-------------------------------*/
+html { font-size: 62.5%; }
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+* {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+a {
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/*	Layout
+-------------------------------*/
+article, aside, footer, header, nav, section, main { display: block; }
+
+* {
+    box-sizing: border-box;
+	&::before, &::after { box-sizing: inherit; }
+}
+
+/*	Elements
+-------------------------------*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+	tr {
+		th, td {
+			padding: 0;
+			text-align: left;
+			vertical-align: top;
+		}
+	}
+}
+
+ol, ul { list-style: none; }
+
+img {
+	border-style: none;
+	vertical-align: bottom;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+blockquote, q { quotes: none; }
+
+blockquote:after, blockquote:before,
+q:after, q:before {
+    content: "";
+    content: none;
+}
+
+/*	Attributes & States
+-------------------------------*/
+[hidden] { display: none!important; }
+
+[disabled] { cursor: not-allowed; }
+
+:focus:not(:focus-visible) { outline: none; }
+
+/*-------------------------------
+	Gobal
+-------------------------------*/
+
+body {
+    font-family: 'ヒラギノ角ゴ Pro W3',' Hiragino Kaku Gothic Pro', 'MeiryoUI', 'MSUIGothic', 'メイリオ', 'Meiryo', 'ＭＳＰゴシック', sans-serif;
+	font-size: 1.4rem;
+	color: #000;
+	line-height: 1.8;
+	letter-spacing: .05em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	min-width: 320px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* for IE11 */
+@media all and (-ms-high-contrast:none) {
+	*::-ms-backdrop, body {
+		 font-family: 'Meiryo', sans-serif;
+	}
+}
+
+/*-------------------------------
+	Grid
+-------------------------------*/
+
+/*	Variable
+-------------------------------*/
+
+/* Column Option */
+$container-width: 1000px;
+$column-number: 12;
+$column-gutter: 15px;
+
+/* Other Option */
+$modlue-max-px: 300;//px -> gutter, margin, padding, trbl
+$modlue-max-fz: 300;//% -> font-size
+$modlue-max-lh: 3;//- -> line-height
+$modlue-max-lts: 3;//em -> letter-spacing
+$modlue-max-bdrs: 30;//px -> border-radius
+
+/* function variable */
+$modlue-increase-step: 5;// increase step
+$modlue-max-set: $modlue-max-px / $modlue-increase-step;
+
+/*	Container
+-------------------------------*/
+.cols,
+.cols-full,
+.cols-filld,
+.cols-filld-full {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: auto;
+	margin-right: auto;
+	&.nega {
+		margin-left: -#{$column-gutter};
+		margin-right: -#{$column-gutter};
+		width: auto;
+		max-width: 9999px;
+	}
+	> * {
+		width: 100%;
+		padding-left: $column-gutter;
+		padding-right: $column-gutter;
+		position: relative;
+		min-height: 1px;
+		> .h-eq {
+			height: 100%;
+		}
+	}
+}
+
+.cols {
+	max-width: $container-width;
+	width: 100%;
+}
+
+.cols-filld,
+.cols-filld-full {
+	width: 100%;
+	> * {
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.cols-filld {
+	max-width: ($container-width - ($column-gutter * 2));
+	width: 100%;
+}
+
+@for $number from 1 through $column-number {
+	.col-#{$number} {
+		flex: 0 0 ((100% / $column-number) * $number);
+		max-width: ((100% / $column-number) * $number);
+	}
+	.return-#{$number} {
+		margin-left: calc(((-100% / #{$column-number}) * #{$number}) - 1px);
+	}
+}
+.return-0 { margin-left: auto };
+@for $width from 1 through $modlue-max-set {
+	.gutter-#{$width * $modlue-increase-step} {
+		> * {
+			padding-left: (($modlue-increase-step * $width) / 2) * 1px;
+			padding-right: (($modlue-increase-step * $width) / 2) * 1px;
+		}
+		&.nega {
+			margin-left: (($modlue-increase-step * $width) / 2) * -1px;
+			margin-right: (($modlue-increase-step * $width) / 2) * -1px;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		@for $number from 1 through $column-number {
+			.col-#{$mq}-#{$number} {
+				flex: 0 0 ((100% / $column-number) * $number);
+				max-width: ((100% / $column-number) * $number);
+			}
+			.col-#{$mq} {
+				flex: 1 0 0%;
+				max-width: none;
+			}
+			.return-#{$mq}-#{$number} {
+				margin-left: calc(((-100% / #{$column-number}) * #{$number}) - 1px);
+			}
+		}
+		.return-#{$mq}-0 { margin-left: auto };
+		@for $width from 1 through $modlue-max-set {
+			.gutter-#{$mq}-#{$width * $modlue-increase-step} {
+				> * {
+					padding-left: (($modlue-increase-step * $width) / 2) * 1px;
+					padding-right: (($modlue-increase-step * $width) / 2) * 1px;
+				}
+				&.nega {
+					margin-left: (($modlue-increase-step * $width) / 2) * -1px;
+					margin-right: (($modlue-increase-step * $width) / 2) * -1px;
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+		}
+	}
+}
+
+/*-------------------------------
+	Emmet
+-------------------------------*/
+
+/*	Visual Formatting
+-------------------------------*/
+
+/* position */
+//.pos-s { position: static; }
+//.pos-a { position: absolute; }
+//.pos-r { position: relative; }
+//.pos-f { position: fixed; }
+//@each $mq, $breakpoint in $breakpoints {
+//	@include mq($mq) {
+//		.#{$mq}-pos-s { position: static; }
+//		.#{$mq}-pos-a { position: absolute; }
+//		.#{$mq}-pos-r { position: relative; }
+//		.#{$mq}-pos-f { position: fixed; }
+//	}
+//}
+
+/* top, right, bottom, left */
+//@each $key, $value in $trbl {
+//	.#{$key}-a { #{$value}: auto; }
+//	@for $width from 1 through $modlue-max-set {
+//		.#{$key}#{$width * $modlue-increase-step} { #{$value}: ($modlue-increase-step * $width) * 1px; }
+//		.#{$key}-#{$width * $modlue-increase-step} { #{$value}: ($modlue-increase-step * $width) * -1px; }
+//	}
+//}
+//@each $mq, $breakpoint in $breakpoints {
+//	@include mq($mq) {
+//		@each $key, $value in $trbl {
+//			.#{$mq}-#{$key}-a { #{$value}: auto; }
+//			@for $width from 1 through $modlue-max-set {
+//				.#{$key}#{$width * $modlue-increase-step} { #{$value}: ($modlue-increase-step * $width) * 1px; }
+//				.#{$key}-#{$width * $modlue-increase-step} { #{$value}: ($modlue-increase-step * $width) * -1px; }
+//			}
+//		}
+//	}
+//}
+
+/* z-index */
+// @for $i from 1 through 10 {
+// 	.z#{$i} {
+// 		position: relative;
+// 		z-index: $i;
+// 	}
+// }
+// @each $mq, $breakpoint in $breakpoints {
+// 	@for $i from 1 through 10 {
+// 		.#{$mq}-z#{$i} {
+// 			position: relative;
+// 			z-index: $i;
+// 		}
+// 	}
+// }
+
+/* float */
+// .fl-n { float: none; }
+// .fl-l { float: left; }
+// .fl-r { float: right; }
+// @each $mq, $breakpoint in $breakpoints {
+// 	@include mq($mq) {
+// 		.#{$mq}-fl-n { float: none; }
+// 		.#{$mq}-fl-l { float: left; }
+// 		.#{$mq}-fl-r { float: right; }
+// 	}
+// }
+
+/* display */
+.d-n { display: none; }
+.d-b { display: block; }
+.d-f { display: flex; }
+.d-if { display: inline-flex; }
+.d-i { display: inline; }
+.d-ib { display: inline-block; }
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		.#{$mq}-d-n { display: none; }
+		.#{$mq}-d-b { display: block; }
+		.#{$mq}-d-f { display: flex; }
+		.#{$mq}-d-if { display: inline-flex; }
+		.#{$mq}-d-i { display: inline; }
+		.#{$mq}-d-ib { display: inline-block; }
+	}
+}
+
+/* overflow */
+// .ov-v { overflow: visible; }
+// .ov-h { overflow: hidden; }
+// .ov-s { overflow: scroll; }
+// .ov-a { overflow: auto; }
+// @each $mq, $breakpoint in $breakpoints {
+// 	@include mq($mq) {
+// 		.#{$mq}-ov-v { overflow: visible; }
+// 		.#{$mq}-ov-h { overflow: hidden; }
+// 		.#{$mq}-ov-s { overflow: scroll; }
+// 		.#{$mq}-ov-a { overflow: auto; }
+// 	}
+// }
+
+/*	Margin & Padding
+-------------------------------*/
+
+/* margin(+negative) & padding */
+@for $width from 0 through $modlue-max-set {
+	// margin
+	.m#{$width * $modlue-increase-step} { margin: ($modlue-increase-step * $width) * 1px; }
+	.m-#{$width * $modlue-increase-step} { margin: ($modlue-increase-step * $width) * -1px; }
+	// padding
+	.p#{$width * $modlue-increase-step} { padding: ($modlue-increase-step * $width) * 1px; }
+}
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		@for $width from 0 through $modlue-max-set {
+			// margin
+			.#{$mq}-m#{$width * $modlue-increase-step} { margin: ($modlue-increase-step * $width) * 1px; }
+			.#{$mq}-m-#{$width * $modlue-increase-step} { margin: ($modlue-increase-step * $width) * -1px; }
+			// padding
+			.#{$mq}-p#{$width * $modlue-increase-step} { padding: ($modlue-increase-step * $width) * 1px; }
+		}
+		.#{$mq}-ma { margin: auto; }
+		.#{$mq}-pa { padding: auto; }
+	}
+}
+
+/* margin(+negative) & padding -> top, right, bottom, left */
+@each $key, $value in $trbl {
+	@for $width from 0 through $modlue-max-set {
+		// margin
+		.m#{$key}#{$width * $modlue-increase-step} { margin-#{$value}: ($modlue-increase-step * $width) * 1px; }
+		.m#{$key}-#{$width * $modlue-increase-step} { margin-#{$value}: ($modlue-increase-step * $width) * -1px; }
+		// padding
+		.p#{$key}#{$width * $modlue-increase-step} { padding-#{$value}: ($modlue-increase-step * $width) * 1px; }
+	}
+	.m#{$key}a { margin-#{$value}: auto; }
+	.p#{$key}a { padding-#{$value}: auto; }
+}
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		@each $key, $value in $trbl {
+			@for $width from 0 through $modlue-max-set {
+				// margin
+				.#{$mq}-m#{$key}#{$width * $modlue-increase-step} { margin-#{$value}: ($modlue-increase-step * $width) * 1px; }
+				.#{$mq}-m#{$key}-#{$width * $modlue-increase-step} { margin-#{$value}: ($modlue-increase-step * $width) * -1px; }
+				// padding
+				.#{$mq}-p#{$key}#{$width * $modlue-increase-step} { padding-#{$value}: ($modlue-increase-step * $width) * 1px; }
+			}
+			.#{$mq}-m#{$key}a { margin-#{$value}: auto; }
+			.#{$mq}-p#{$key}a { padding-#{$value}: auto; }
+		}
+	}
+}
+
+/* margin(+negative) & padding -> top & bottom, left & right */
+@for $width from 0 through $modlue-max-set {
+	// margin
+	.mtb#{$width * $modlue-increase-step} {
+		margin-top: ($modlue-increase-step * $width) * 1px;
+		margin-bottom: ($modlue-increase-step * $width) * 1px;
+	}
+	.mlr#{$width * $modlue-increase-step} {
+		margin-left: ($modlue-increase-step * $width) * 1px;
+		margin-right: ($modlue-increase-step * $width) * 1px;
+	}
+	.mtb-#{$width * $modlue-increase-step} {
+		margin-top: ($modlue-increase-step * $width) * -1px;
+		margin-bottom: ($modlue-increase-step * $width) * -1px;
+	}
+	.mlr-#{$width * $modlue-increase-step} {
+		margin-left: ($modlue-increase-step * $width) * -1px;
+		margin-right: ($modlue-increase-step * $width) * -1px;
+	}
+	// padding
+	.ptb#{$width * $modlue-increase-step} {
+		padding-top: ($modlue-increase-step * $width) * 1px;
+		padding-bottom: ($modlue-increase-step * $width) * 1px;
+	}
+	.plr#{$width * $modlue-increase-step} {
+		padding-left: ($modlue-increase-step * $width) * 1px;
+		padding-right: ($modlue-increase-step * $width) * 1px;
+	}
+}
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		@for $width from 0 through $modlue-max-set {
+			// margin
+			.#{$mq}-mtb#{$width * $modlue-increase-step} {
+				margin-top: ($modlue-increase-step * $width) * 1px;
+				margin-bottom: ($modlue-increase-step * $width) * 1px;
+			}
+			.#{$mq}-mlr#{$width * $modlue-increase-step} {
+				margin-left: ($modlue-increase-step * $width) * 1px;
+				margin-right: ($modlue-increase-step * $width) * 1px;
+			}
+			.#{$mq}-mtb-#{$width * $modlue-increase-step} {
+				margin-top: ($modlue-increase-step * $width) * -1px;
+				margin-bottom: ($modlue-increase-step * $width) * -1px;
+			}
+			.#{$mq}-mlr-#{$width * $modlue-increase-step} {
+				margin-left: ($modlue-increase-step * $width) * -1px;
+				margin-right: ($modlue-increase-step * $width) * -1px;
+			}
+			// padding
+			.#{$mq}-ptb#{$width * $modlue-increase-step} {
+				padding-top: ($modlue-increase-step * $width) * 1px;
+				padding-bottom: ($modlue-increase-step * $width) * 1px;
+			}
+			.#{$mq}-plr#{$width * $modlue-increase-step} {
+				padding-left: ($modlue-increase-step * $width) * 1px;
+				padding-right: ($modlue-increase-step * $width) * 1px;
+			}
+		}
+	}
+}
+
+
+/*	Font
+-------------------------------*/
+
+/* font-weight */
+.fw-n { font-weight: normal; }
+.fw-b { font-weight: bold; }
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		.#{$mq}-fw-n { font-weight: normal; }
+		.#{$mq}-fw-b { font-weight: bold; }
+	}
+}
+
+/* font-style */
+// .fs-n { font-style: normal; }
+// .fs-i { font-style: italic; }
+// .fs-o { font-style: oblique; }
+// @each $mq, $breakpoint in $breakpoints {
+// 	@include mq($mq) {
+// 		.#{$mq}-fs-n { font-style: normal; }
+// 		.#{$mq}-fs-i { font-style: italic; }
+// 		.#{$mq}-fs-o { font-style: oblique; }
+// 	}
+// }
+
+/* font-size */
+$default: 50;// default value
+@while $default <= $modlue-max-fz {
+	.fz#{$default} { font-size: $default * 1%; }
+	$default: $default + $modlue-increase-step;
+}
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		$default: 50;// default value
+		@while $default <= $modlue-max-fz {
+			.#{$mq}-fz#{$default} { font-size: $default * 1%; }
+			$default: $default + $modlue-increase-step;
+		}
+	}
+}
+
+/*	Text
+-------------------------------*/
+
+/* vertical-align */
+// .va-t { vertical-align: top; }
+// .va-m { vertical-align: middle; }
+// .va-b { vertical-align: bottom; }
+// @each $mq, $breakpoint in $breakpoints {
+// 	@include mq($mq) {
+// 		.#{$mq}-va-t { vertical-align: top; }
+// 		.#{$mq}-va-m { vertical-align: middle; }
+// 		.#{$mq}-va-b { vertical-align: bottom; }
+// 	}
+// }
+
+/* text-align */
+.ta-l { text-align: left; }
+.ta-c { text-align: center; }
+.ta-r { text-align: right; }
+.ta-j { text-align: justify; }
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		.#{$mq}-ta-l { text-align: left; }
+		.#{$mq}-ta-c { text-align: center; }
+		.#{$mq}-ta-r { text-align: right; }
+		.#{$mq}-ta-j { text-align: justify; }
+	}
+}
+
+/* text-decoration */
+//.td-n { text-decoration: none; }
+//.td-u { text-decoration: underline; }
+//.td-o { text-decoration: overline; }
+//.td-l { text-decoration: line-through; }
+//@each $mq, $breakpoint in $breakpoints {
+//	@include mq($mq) {
+//		.#{$mq}-td-n { text-decoration: none; }
+//		.#{$mq}-td-u { text-decoration: underline; }
+//		.#{$mq}-td-o { text-decoration: overline; }
+//		.#{$mq}-td-l { text-decoration: line-through; }
+//	}
+//}
+
+/* line-height */
+$default: 100;// default value
+@while $default <= $modlue-max-lh * 100 {
+	.lh#{$default} { line-height: $default / 100; }
+	$default: $default + $modlue-increase-step;
+}
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		$default: 100;// default value
+		@while $default <= $modlue-max-lh * 100 {
+			.#{$mq}-lh#{$default} { line-height: $default / 100; }
+			$default: $default + $modlue-increase-step;
+		}
+	}
+}
+
+/* letter-spacing */
+$default: 0;// default value
+@while $default <= $modlue-max-lts * 100 {
+	.lts#{$default} { letter-spacing: $default / 100 * 1em; }
+	$default: $default + $modlue-increase-step;
+}
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		$default: 0;// default value
+		@while $default <= $modlue-max-lts * 100 {
+			.#{$mq}-lts#{$default} { letter-spacing: $default / 100 * 1em; }
+			$default: $default + $modlue-increase-step;
+		}
+	}
+}
+
+/*	Border
+-------------------------------*/
+
+/* border-radius */
+// $radius: 0;
+// @while $radius <= $modlue-max-bdrs {
+// 	.bdrs#{$radius} { border-radius: $radius * 1px; }
+// 	$radius: $radius + 1;
+// }
+// @each $mq, $breakpoint in $breakpoints {
+// 	@include mq($mq) {
+// 		$radius: 0;
+// 		@while $radius <= $modlue-max-bdrs {
+// 			.#{$mq}-bdrs#{$radius} { border-radius: $radius * 1px; }
+// 			$radius: $radius + 1;
+// 		}
+// 	}
+// }
+
+/*	Others
+-------------------------------*/
+
+/* align-items */
+.ai-c { align-items: center; }
+.ai-fe { align-items: flex-end; }
+.ai-fs { align-items: flex-start; }
+.ai-s { align-items: stretch; }
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		.#{$mq}-ai-c { align-items: center; }
+		.#{$mq}-ai-fe { align-items: flex-end; }
+		.#{$mq}-ai-fs { align-items: flex-start; }
+		.#{$mq}-ai-s { align-items: stretch; }
+	}
+}
+
+/* flex-direction */
+// .fxd-c { flex-direction: column; }
+// .fxd-cr { flex-direction: column-reverse; }
+// .fxd-r { flex-direction: row; }
+// .fxd-rr { flex-direction: row-reverse; }
+// @each $mq, $breakpoint in $breakpoints {
+// 	@include mq($mq) {
+// 		.#{$mq}-fxd-c { flex-direction: column; }
+// 		.#{$mq}-fxd-cr { flex-direction: column-reverse; }
+// 		.#{$mq}-fxd-r { flex-direction: row; }
+// 		.#{$mq}-fxd-rr { flex-direction: row-reverse; }
+// 	}
+// }
+
+/* flex-wrap */
+// .fxw-n { flex-wrap: nowrap; }
+// .fxw-w { flex-wrap: wrap; }
+// .fxw-wr { flex-wrap: wrap-reverse; }
+// @each $mq, $breakpoint in $breakpoints {
+// 	@include mq($mq) {
+// 		.#{$mq}-fxw-n { flex-wrap: nowrap; }
+// 		.#{$mq}-fxw-w { flex-wrap: wrap; }
+// 		.#{$mq}-fxw-wr { flex-wrap: wrap-reverse; }
+// 	}
+// }
+
+/* justify-content */
+.jc-c { justify-content: center; }
+.jc-fe { justify-content: flex-end; }
+.jc-fs { justify-content: flex-start; }
+.jc-sa { justify-content: space-around; }
+.jc-sb { justify-content: space-between; }
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		.#{$mq}-jc-c { justify-content: center; }
+		.#{$mq}-jc-fe { justify-content: flex-end; }
+		.#{$mq}-jc-fs { justify-content: flex-start; }
+		.#{$mq}-jc-sa { justify-content: space-around; }
+		.#{$mq}-jc-sb { justify-content: space-between; }
+	}
+}
+
+/* order */
+// @for $number from 1 through $column-number {
+// 	.ord#{$number} { order: $number; }
+// }
+// @each $mq, $breakpoint in $breakpoints {
+// 	@include mq($mq) {
+// 		@for $number from 1 through $column-number {
+// 			.#{$mq}-ord#{$number} { order: $number; }
+// 		}
+// 	}
+// }
+
+/*-------------------------------
+	Customize
+-------------------------------*/
+
+/* clearfix */
+// .cf {
+// 	&::before,
+// 	&::after {
+// 		content: "";
+// 		display: table;
+// 	}
+// 	&::after { clear: both; }
+// }
+
+/* Adjust the responsive bezel */
+.cols,
+.cols-full {
+	@include mq(md) {
+		padding-left: 15px;
+		padding-right: 15px;
+		.cols, .cols-full, .cols-filld, .cols-filld-full {
+			&.nega {
+				&:not([class*="gutter-"]) {
+					margin-left: -30px;
+					margin-right: -30px;
+				}
+			}
+		}
+	}
+	@include mq(sm) {
+		padding-left: 5px;
+		padding-right: 5px;
+		.cols, .cols-full, .cols-filld, .cols-filld-full {
+			&.nega {
+				&:not([class*="gutter-"]) {
+					margin-left: -20px;
+					margin-right: -20px;
+				}
+			}
+		}
+	}
+}
+.cols-filld, .cols-filld-full {
+	@include mq(md) {
+		.cols, .cols-full, .cols-filld, .cols-filld-full {
+			&.nega {
+				&:not([class*="gutter-"]) {
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+		}
+	}
+	@include mq(sm) {
+		.cols, .cols-full, .cols-filld, .cols-filld-full {
+			&.nega {
+				&:not([class*="gutter-"]) {
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+		}
+	}
+}
+
+/* Responsive Image */
+.img-rspsv {
+	max-width: 100%;
+	height: auto;
+}
+.img-rspsv-full {
+	width: 100%;
+	height: auto;
+}
+@each $mq, $breakpoint in $breakpoints {
+	@include mq($mq) {
+		.#{$mq}-img-rspsv {
+			max-width: 100%;
+			height: auto;
+		}
+		.#{$mq}-img-rspsv-full {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+/* Largest Radius */
+// .bdrs-max { border-radius: 9999px; }
+// @each $mq, $breakpoint in $breakpoints {
+// 	@include mq($mq) {
+// 		.#{$mq}-bdrs-max { border-radius: 9999px; }
+// 	}
+// }
+
+/* Adjust irregular links */
+// .tel-link,
+// .not-link { pointer-events: none; }
+// @include mq(md) {
+// 	.tel-link { pointer-events: auto; }
+// }
+
+/* flex-grow */
+// .fxg1 { flex-grow: 1; }
+
+/* Responsive the embedded iframe */
+.embed-16-9,
+.embed-4-3 {
+	display: block;
+	height: 0;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+	.embed-item {
+		width: 100%;
+		height: 100%;
+		border: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+.embed-16-9 { padding-bottom: 56.25%; }
+.embed-4-3 { padding-bottom: 75%; }
+
+/* To underline */
+.under-line { text-decoration: underline; }
+a.under-line:hover { text-decoration: none; }

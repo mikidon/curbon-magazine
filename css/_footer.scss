@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+//Common
+@import "_common";
+
+/*-------------------------------
+	footer
+-------------------------------*/
+
+.footer {
+	/* .messageBlock：ステークホルダーへのメッセージ */
+	.messageBlock {
+		background: url(../img/common/messageBlock-bgi.jpg) center center/cover no-repeat;
+		padding: 115px 0;
+		text-align: center;
+		@include mq(sm) {
+			background: url(../img/common/messageBlock-bgi-sm.jpg) center center/cover no-repeat;
+			padding: 65px 0;
+		}
+		p {
+			font-size: 15px;
+			font-weight: bold;
+			color: $white;
+			line-height: 2;
+			@include mq(sm) {
+				font-size: 13px;
+			}
+			&:not(:first-child) {
+				@include mq(sm) {
+					margin-top: .5em;
+				}
+			}
+			br {
+				display: none;
+				@include mq(sm) {
+					display: inline;
+				}
+			}
+		}
+	}
+	/* .footer-subLink：関連するリンク */
+	&-subLink {
+		font-size: 13px;
+		line-height: 1.2;
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			@include mq(sm) {
+				display: block;
+				text-align: center;
+			}
+			li {
+				padding: 0 1em;
+				position: relative;
+				@include mq(sm) {
+					padding: 0;
+				}
+				&:not(:first-child) {
+					@include mq(sm) {
+						padding-top: 1em;
+					}
+					&::before {
+						content: "";
+						background-color: $black;
+						width: 1px;
+						height: 1em;
+						position: absolute;
+						top: 0;
+						left: 0;
+						@include mq(sm) {
+							display: none;
+						}
+					}
+				}
+				a {}
+			}
+		}
+	}
+	/* .copyright：コピーライト */
+	.copyright {
+		padding: 20px 0;
+		text-align: center;
+		small {
+			font-family: $en1;
+			font-style: italic;
+			font-size: 12px;
+			line-height: 1;
+		}
+	}
+}
