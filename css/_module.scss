@@ -36,11 +36,14 @@
 	display: block;
 	background: $black;
 	color: $white;
+	font-family: $en1;
+	letter-spacing: .2em;
 	max-width: 340px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 15px 40px;
 	font-weight: bold;
+	font-style: italic;
 	line-height: 1.2;
 	position: relative;
 	&::before {
@@ -91,6 +94,16 @@
 	font-style: italic;
 	line-height: 1.2;
 	letter-spacing: .2em;
+}
+.btn-block-txt {// ボタン-文字のみ
+	display: inline-block;
+	color: $white;
+	padding: 5px 0;
+	font-family: $en1;
+	font-style: italic;
+	line-height: 1.2;
+	letter-spacing: .2em;
+	border-bottom: 1px solid #fff;
 }
 
 /*	Object
@@ -247,14 +260,14 @@
 				a {
 					display: block;
 					background-color: #fff;
-					border: 1px solid #000;
+					border: 1px solid #222;
 					width: 48px;
 					height: 48px;
 					line-height: 48px;
 					text-align: center;
 					&.act {
 						color: #fff;
-						background-color: #000;
+						background-color: #222;
 					}
 				}
 				&:first-child a, &:last-child a { font-size: 85%; }
@@ -283,7 +296,7 @@
 				&:first-child, &:last-child { width: 48px; }
 				a {
 					display: block;
-					border: 1px solid #000;
+					border: 1px solid #222;
 					height: 48px;
 					line-height: 48px;
 					text-align: center;

@@ -56,8 +56,8 @@
                 </div>
             </div>
         </div>
-        <div class="cols cols-wide pt90 sm-pt60 js-scroll">
-            <div class="col-12">
+        <div class="cols jc-c pt70 sm-pt60 js-scroll">
+            <div class="col-11 col-sm-12">
                 <?php $args = array(
                     'post_type' => 'specials',
                     'posts_per_page' => 1,
@@ -310,7 +310,7 @@
                     </div>
                 </div>
                 <div class="mt60 sm-mt30 ta-c">
-                    <a href="<?php echo home_url(); ?>/magazine" class="btn-round hov">すべての記事をみる</a>
+                    <a href="<?php echo home_url(); ?>/magazine" class="btn-round hov">MORE</a>
                 </div>
             </div>
         </div>
@@ -397,8 +397,8 @@
                 </form>
             </div>
         </div>
-        <div class="cols pt60 sm-pt30 js-scroll">
-            <div class="col-12">
+        <div class="cols jc-c pt60 js-scroll">
+            <div class="col-12 col-sm-11">
                 <!-- .hotWords -->
                 <div class="hotWords">
                     <div class="hotWords-ttl">Hot word</div>
@@ -410,8 +410,8 @@
                             <?php } ?>
                         <?php } ?>
                     </ul>
-                    <div class="mt30 ta-c">
-                        <a href="<?php echo home_url(); ?>/tag" class="btn-block-white hov">ALL VIEW</a>
+                    <div class="mt30 ta-r">
+                        <a href="<?php echo home_url(); ?>/tag" class="btn-block-txt hov">MORE</a>
                     </div>
                 </div>
             </div>
@@ -428,7 +428,7 @@
             </div>
         </div>-->
         <!-- .review -->
-        <section class="review pt120 sm-pt90 js-scroll">
+        <section class="review mt120 ptb80 sm-mt80 sm-ptb60 js-scroll bgc-lightgray">
             <div class="cols">
                 <div class="col-12">
                     <div class="review-info">
@@ -471,7 +471,7 @@
                         <?php endif; ?>
                         <?php wp_reset_postdata(); ?>
                     </div>
-                    <div class="d-n sm-d-b pt40 ta-c">
+                    <div class="d-n sm-d-b pt40 ta-r">
                         <a href="<?php echo home_url(); ?>/review" class="btn-block-black hov">ALL VIEW</a>
                     </div>
                 </div>
@@ -543,7 +543,7 @@
             <div class="cols">
                 <div class="col-12">
                     <div class="topNews-info">
-                        <h2 class="topNews-ttl">News</h2>
+                        <h2 class="topNews-ttl">NEWS</h2>
                         <div class="topNews-btn">
                             <a href="<?php echo home_url(); ?>/new" class="btn-block-black hov">ALL VIEW</a>
                         </div>
@@ -577,7 +577,7 @@
                         <?php endif; ?>
                         <?php wp_reset_postdata(); ?>
                     </div>
-                    <div class="d-n sm-d-b pt25 ta-c">
+                    <div class="d-n sm-d-b pt25 ta-r">
                         <a href="<?php echo home_url(); ?>/new" class="btn-block-black hov">ALL VIEW</a>
                     </div>
                 </div>

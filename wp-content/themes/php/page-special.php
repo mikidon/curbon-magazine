@@ -95,8 +95,8 @@
                             <?php } ?>
                         <?php } ?>
                     </ul>
-                    <div class="mt30 ta-c">
-                        <a href="<?php echo home_url(); ?>/tag" class="btn-block-white hov">ALL VIEW</a>
+                    <div class="mt30 ta-r">
+                        <a href="<?php echo home_url(); ?>/tag" class="btn-block-txt hov">ALL VIEW</a>
                     </div>
                 </div>
             </div>

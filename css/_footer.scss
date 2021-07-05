@@ -38,27 +38,32 @@
 			}
 		}
 	}
-	/* .footer-subLink：関連するリンク */
-	&-subLink {
-		font-size: 13px;
-		line-height: 1.2;
+	/* .footer-txt：会社概要 */
+	&-txt {
 		position: relative;
+		color: $white;
+		text-align: left;
 		&::before {
 			content: "";
 			position: absolute;
 			background: $white;
 			width: 1px;
-			height: 60px;
+			height: 140px;
 			left: 0;
-			top: calc(50% - 30px);
+			top: calc(50% - 70px);
 			@include mq(sm) {
 				display: none;
 			}
 		}
+	}
+	/* .footer-subLink：関連するリンク */
+	&-subLink {
+		font-size: 13px;
+		line-height: 1.2;
 		ul {
 			display: flex;
 			align-items: center;
-			justify-content: center;
+			justify-content: flex-start;
 			@include mq(sm) {
 				display: block;
 				text-align: center;
@@ -69,7 +74,15 @@
 				font-family: $en1;
 				color: $white;
 				@include mq(sm) {
-					padding: 0;
+					padding: 15px 0;
+					border-bottom: 1px dashed #ffffff4f;
+				}
+				&:first-child {
+					padding: 0 15px 0 0;
+					@include mq(sm) {
+						padding: 15px 0;
+						border-top: 1px dashed #ffffff4f;
+					}
 				}
 				&:not(:first-child) {
 					@include mq(sm) {

@@ -59,7 +59,7 @@
                             <div class="col-12 ta-c">
                                 <p class="fw-b">検索結果にヒットしませんでした。</p>
                                 <div class="mt60 sm-mt30 ta-c">
-                                    <a href="<?php echo home_url(); ?>/" class="btn-round hov">トップページにもどる</a>
+                                    <a href="<?php echo home_url(); ?>/" class="btn-round hov">BACK TO TOP</a>
                                 </div>
                             </div>
                         <?php endif; ?>

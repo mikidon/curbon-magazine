@@ -95,9 +95,12 @@ body {
 				background-color: $black;
 				position: relative;
 				overflow: hidden;
+				.heroSlide-item-thumb {
+					opacity: .85;
+				}
 				&:hover {
 					.heroSlide-item-thumb {
-						opacity: .85;
+						opacity: 1;
 					}
 				}
 				&-info {
@@ -109,7 +112,7 @@ body {
 					left: 0;
 					z-index: 1;
 					@include mq(sm) {
-						padding: 20px;
+						padding: 40px 20px;
 					}
 				}
 				&-category {
@@ -117,6 +120,9 @@ body {
 					letter-spacing: .1em;
 					font-size: 14px;
 					line-height: 1.2;
+					color: $white;
+					border: 1px solid #fff;
+					padding: 5px 15px;
 					@include mq(sm) {
 						font-size: 13px;
 					}
@@ -125,13 +131,12 @@ body {
 					margin-top: 5px;
 					span {
 						display: inline-block;
-						background-color: $white;
-						padding: 10px 20px;
+						color: $white;
+						margin-top: 10px;
 						font-family: $ja;
 						font-size: 20px;
-						line-height: 2;
+						line-height: 1.6;
 						@include mq(sm) {
-							padding: 5px 10px;
 							font-size: 14px;
 						}
 					}
@@ -556,7 +561,7 @@ body {
 					text-align: center;
 					@include mq(sm) {
 						flex: 0 0 100px;
-						width: 100px;
+						width: 85px;
 						padding: 5px;
 						font-size: 12px;
 					}
@@ -571,7 +576,7 @@ body {
 					white-space: nowrap;
 					@include mq(sm) {
 						margin-left: 0;
-						padding-top: 10px;
+						padding-top: 15px;
 					}
 				}
 			}
@@ -596,7 +601,7 @@ body {
 	align-items: center;
 	input[type="search"] {
 		display: block;
-		border: 1px solid #000;
+		border: 1px solid #222;
 		border-radius: 9999px;
 		width: 100%;
 		padding: 15px 20px;
@@ -637,7 +642,7 @@ body {
 
 /* .hotWords：登録数の多いタクソノミーを表示 */
 .hotWords {
-	background-color: $black;
+	background-color: #829192;
 	padding: 50px;
 	@include mq(sm) {
 		margin-left: -20px;
@@ -706,7 +711,7 @@ body {
 		flex-direction: column;
 		width: 100%;
 		height: 100%;
-		padding: 60px;
+		padding: 40px;
 		border: 0;
 		color: $white;
 		position: absolute;
@@ -720,7 +725,7 @@ body {
 	&-label {
 		display: block;
 		font-family: $en1;
-		font-size: 20px;
+		font-size: 16px;
 		line-height: 1;
 		letter-spacing: .2em;
 		@include mq(sm) {
@@ -732,7 +737,7 @@ body {
 	}
 	&-ttl {
 		font-family: $en1;
-		font-size: 40px;
+		font-size: 36px;
 		line-height: 1.2;
 		letter-spacing: .2em;
 		@include mq(sm) {
@@ -769,8 +774,8 @@ body {
 		color: $white;
 		line-height: 1;
 		position: absolute;
-		right: 60px;
-		bottom: 60px;
+		right: 40px;
+		bottom: 40px;
 		z-index: 0;
 		@include mq(sm) {
 			display: none;
@@ -994,7 +999,7 @@ body {
 			letter-spacing: .15em;
 			@include mq(sm) {
 				padding-top: 5px;
-				font-size: 10px;
+				font-size: 12px;
 			}
 		}
 	}
@@ -1007,6 +1012,7 @@ body {
 		&-item {
 			display: flex;
 			padding: 30px 0;
+			border-bottom: 1px solid #eee;
 			@include mq(sm) {
 				display: block;
 				padding: 20px 0;
@@ -1101,7 +1107,7 @@ body {
 						text-align: center;
 						&.act {
 							color: #fff;
-							background-color: #000;
+							background-color: #222;
 						}
 					}
 					&:first-child a,
@@ -1146,7 +1152,7 @@ body {
 					}
 					a {
 						display: block;
-						border: 1px solid #000;
+						border: 1px solid #222;
 						height: 48px;
 						line-height: 48px;
 						text-align: center;

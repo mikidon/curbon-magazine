@@ -18,7 +18,7 @@
                     <p class="fw-b">ご覧いただいているURLにはページはありません。<br>
                         URLの入力間違いか、<br class="d-n sm-d-i">ページが移動している可能性があります。</p>
                     <div class="mt60 sm-mt30 ta-c">
-                        <a href="<?php echo home_url(); ?>/" class="btn-round hov">トップページにもどる</a>
+                        <a href="<?php echo home_url(); ?>/" class="btn-round hov">BACK TO TOP</a>
                     </div>
                 </div>
             </div>
@@ -48,12 +48,13 @@
                             <?php } ?>
                         <?php } ?>
                     </ul>
-                    <div class="mt30 ta-c">
-                        <a href="<?php echo home_url(); ?>/tag" class="btn-block-white hov">ALL VIEW</a>
+                    <div class="mt30 ta-r">
+                        <a href="<?php echo home_url(); ?>/tag" class="btn-block-txt hov">ALL VIEW</a>
                     </div>
                 </div>
             </div>
         </div>
+        <!--
         <div class="cols jc-c pt60 js-scroll">
             <div class="col-12">
                 <div class="cols jc-c nega gutter-10 mt-10">
@@ -64,6 +65,7 @@
                 </div>
             </div>
         </div>
+        -->
     </main>
     <?php get_footer(); ?>
 </body>
