@@ -321,10 +321,11 @@ if (!current_user_can('level_10')) {
 		//unset($menu[2]);//ダッシュボード
 		unset($menu[4]); //メニューの線1
 		//unset($menu[5]);//投稿
-		//remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=category'); // 投稿 -> カテゴリ
+		remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=category'); // 投稿 -> カテゴリ
 		remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag'); // 投稿 -> タグ
 		//remove_menu_page('edit.php?post_type=excursions');
-		//remove_submenu_page('edit.php?post_type=voices', 'edit-tags.php?taxonomy=voices-cat&amp;post_type=voices'); // URLの"&"は、"&amp;"に書き換えないとダメ
+		remove_submenu_page('edit.php?post_type=magazines', 'edit-tags.php?taxonomy=magazines-cat&amp;post_type=magazines');
+		remove_submenu_page('edit.php?post_type=reviews', 'edit-tags.php?taxonomy=reviews-cat&amp;post_type=reviews');
 		unset($menu[10]); //メディア
 		unset($menu[15]); //リンク
 		unset($menu[20]); //ページ

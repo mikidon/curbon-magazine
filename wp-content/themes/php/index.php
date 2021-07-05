@@ -39,11 +39,7 @@
                                                         <span class="heroSlide-item-btn">Read more</span>
                                                     </div>
                                                     <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size700650'); ?>
-                                                    <?php if ($imgset) { ?>
-                                                        <img class="heroSlide-item-thumb img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="700" height="650" alt="サムネイル">
-                                                    <?php } else { ?>
-                                                        <img class="heroSlide-item-thumb img-rspsv-full" src="<?php echo home_url(); ?>/img/common/noimage.png" width="700" height="650" alt="サムネイル">
-                                                    <?php } ?>
+                                                    <img class="heroSlide-item-thumb img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="700" height="650" alt="サムネイル">
                                                 </a>
                                             </article>
                                         <?php endwhile; ?>
@@ -119,11 +115,7 @@
                                                     <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
                                                         <figure class="feedBasic-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
-                                                            <?php if ($imgset) { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
-                                                            <?php } else { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/noimage.png" width="280" height="200" alt="サムネイル">
-                                                            <?php } ?>
+                                                            <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedBasic-subInfo">
                                                             <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
@@ -165,11 +157,7 @@
                                                     <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
                                                         <figure class="feedBasic-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
-                                                            <?php if ($imgset) { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
-                                                            <?php } else { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/noimage.png" width="280" height="200" alt="サムネイル">
-                                                            <?php } ?>
+                                                            <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedBasic-subInfo">
                                                             <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
@@ -211,11 +199,7 @@
                                                     <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
                                                         <figure class="feedBasic-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
-                                                            <?php if ($imgset) { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
-                                                            <?php } else { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/noimage.png" width="280" height="200" alt="サムネイル">
-                                                            <?php } ?>
+                                                            <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedBasic-subInfo">
                                                             <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
@@ -257,11 +241,7 @@
                                                     <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
                                                         <figure class="feedBasic-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
-                                                            <?php if ($imgset) { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
-                                                            <?php } else { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/noimage.png" width="280" height="200" alt="サムネイル">
-                                                            <?php } ?>
+                                                            <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedBasic-subInfo">
                                                             <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
@@ -303,11 +283,7 @@
                                                     <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
                                                         <figure class="feedBasic-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
-                                                            <?php if ($imgset) { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
-                                                            <?php } else { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/noimage.png" width="280" height="200" alt="サムネイル">
-                                                            <?php } ?>
+                                                            <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedBasic-subInfo">
                                                             <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
@@ -379,11 +355,7 @@
                                                     <a href="<?php the_permalink(); ?>" class="rankingSlide-item hov">
                                                         <figure class="rankingSlide-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
-                                                            <?php if ($imgset) { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="320" height="350" alt="サムネイル">
-                                                            <?php } else { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/noimage2.png" width="320" height="350" alt="写真" />
-                                                            <?php } ?>
+                                                            <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="320" height="350" alt="サムネイル">
                                                         </figure>
                                                         <div class="rankingSlide-info">
                                                             <h3 class="rankingSlide-ttl js-matchHeight"><?php the_title(); ?></h3>
@@ -431,13 +403,16 @@
                 <div class="hotWords">
                     <div class="hotWords-ttl">Hot word</div>
                     <ul class="hotWords-tags">
-                        <?php $categories = get_terms('post-tag', 'orderby=count&hide_empty=1&order=DESC'); ?>
+                        <?php $categories = get_terms('post-tag', 'orderby=count&hide_empty=1&order=DESC&number=20'); ?>
                         <?php if ($categories) {
                             foreach ($categories as $category) { ?>
                                 <li><a href="<?php echo home_url(); ?>/?s=<?php echo $category->name; ?>&type=post" class="hotWords-tags-item hov"><?php echo $category->name; ?></a></li>
                             <?php } ?>
                         <?php } ?>
                     </ul>
+                    <div class="mt30 ta-c">
+                        <a href="<?php echo home_url(); ?>/tag" class="btn-block-white hov">ALL VIEW</a>
+                    </div>
                 </div>
             </div>
         </div>

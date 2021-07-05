@@ -1,1 +1,7 @@
 @charset "utf-8";
+
+#category-adder,
+#magazines-cat-adder,
+#reviews-cat-adder {
+  display: none!important;
+}

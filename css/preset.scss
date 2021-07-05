@@ -305,12 +305,12 @@ $modlue-max-set: $modlue-max-px / $modlue-increase-step;
 //}
 
 /* z-index */
-// @for $i from 1 through 10 {
-// 	.z#{$i} {
-// 		position: relative;
-// 		z-index: $i;
-// 	}
-// }
+@for $i from 1 through 10 {
+	.z#{$i} {
+		position: relative;
+		z-index: $i;
+	}
+}
 // @each $mq, $breakpoint in $breakpoints {
 // 	@for $i from 1 through 10 {
 // 		.#{$mq}-z#{$i} {

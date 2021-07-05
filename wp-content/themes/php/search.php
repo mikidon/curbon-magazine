@@ -6,7 +6,7 @@
     <?php get_header(); ?>
     <!-- .content -->
     <main class="content">
-        <div class="cols ptb50 sm-ptb30 js-scroll">
+        <div class="cols ptb50 sm-ptb30 z2 js-scroll">
             <div class="col-12">
                 <!-- .contentTtl -->
                 <div class="contentTtl fw-b">「<?php the_search_query(); ?>」の検索結果</div>
@@ -25,11 +25,7 @@
                                         <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
                                             <figure class="feedBasic-thumb">
                                                 <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
-                                                <?php if ($imgset) { ?>
-                                                    <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
-                                                <?php } else { ?>
-                                                    <img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/noimage.png" width="280" height="200" alt="サムネイル">
-                                                <?php } ?>
+                                                <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                             </figure>
                                             <div class="feedBasic-subInfo">
                                                 <?php if ($post->post_type == 'specials') { ?>

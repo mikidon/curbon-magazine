@@ -6,7 +6,7 @@
     <?php get_header(); ?>
     <!-- .content -->
     <main class="content">
-        <div class="cols ptb50 sm-ptb30 js-scroll">
+        <div class="cols ptb50 sm-ptb30 z2 js-scroll">
             <div class="col-12">
                 <!-- .contentTtl -->
                 <div class="contentTtl">NEWS</div>

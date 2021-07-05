@@ -6,7 +6,7 @@
     <?php get_header(); ?>
     <!-- .content -->
     <main class="content">
-        <div class="cols ptb50 sm-ptb30 js-scroll">
+        <div class="cols ptb50 sm-ptb30 z2 js-scroll">
             <div class="col-12">
                 <!-- .contentTtl -->
                 <div class="contentTtl">404 NOT FOUND</div>
@@ -41,13 +41,16 @@
                 <div class="hotWords">
                     <div class="hotWords-ttl">Hot word</div>
                     <ul class="hotWords-tags">
-                        <?php $categories = get_terms('post-tag', 'orderby=count&hide_empty=1&order=DESC'); ?>
+                        <?php $categories = get_terms('post-tag', 'orderby=count&hide_empty=1&order=DESC&number=20'); ?>
                         <?php if ($categories) {
                             foreach ($categories as $category) { ?>
                                 <li><a href="<?php echo home_url(); ?>/?s=<?php echo $category->name; ?>&type=post" class="hotWords-tags-item hov"><?php echo $category->name; ?></a></li>
                             <?php } ?>
                         <?php } ?>
                     </ul>
+                    <div class="mt30 ta-c">
+                        <a href="<?php echo home_url(); ?>/tag" class="btn-block-white hov">ALL VIEW</a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
     <?php get_header(); ?>
     <!-- .content -->
     <main class="content">
-        <div class="cols ptb50 sm-ptb30 js-scroll">
+        <div class="cols ptb50 sm-ptb30 z2 js-scroll">
             <div class="col-12">
                 <!-- .contentTtl -->
                 <div class="contentTtl">RANKING</div>
@@ -40,11 +40,7 @@
                                                     <a href="#" class="feedRanking-item hov">
                                                         <figure class="feedRanking-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
-                                                            <?php if ($imgset) { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
-                                                            <?php } else { ?>
-                                                                <img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/noimage.png" width="280" height="200" alt="サムネイル">
-                                                            <?php } ?>
+                                                            <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="282" height="202" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedRanking-subInfo">
                                                             <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
