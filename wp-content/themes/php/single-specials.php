@@ -33,7 +33,7 @@
                             </article>
                         </div>
                     </div>
-                    <div class="cols pt60 sm-pt30">
+                    <div class="cols pt30">
                         <div class="col-12">
                             <time class="article-date"><?php the_time("Y" . ".m" . ".d"); ?></time>
                             <ul class="article-tags pt20">
@@ -47,7 +47,7 @@
                             <p class="article-read pt60"><?php the_field('read'); ?></p>
                             <?php if (get_field('author')) { ?>
                                 <!-- .profileBlock -->
-                                <div class="profileBlock pt90 sm-pt60">
+                                <div class="profileBlock pt90 md-pt70 sm-pt60">
                                     <?php $rows = get_field('author'); ?>
                                     <?php foreach ($rows as $row) { ?>
                                         <section class="profileBlock-item">
@@ -76,7 +76,7 @@
                                 </div>
                             <?php } ?>
                             <!-- .article-sentence -->
-                            <div class="article-sentence pt90 sm-pt60">
+                            <div class="article-sentence pt30 sm-pt20">
                                 <?php the_content(); ?>
                             </div>
                             <!-- .article-pager -->
@@ -84,7 +84,7 @@
                             $prevpost = get_adjacent_post(false, '', true);
                             $nextpost = get_adjacent_post(false, '', false);
                             ?>
-                            <div class="article-pager pt60 sm-pt30">
+                            <div class="article-pager mt100 sm-mt70">
                                 <div class="cols nega gutter-30 gutter-sm-10">
                                     <div class="col-4 col-sm-3">
                                         <?php if ($prevpost) { ?>

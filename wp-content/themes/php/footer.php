@@ -38,8 +38,9 @@
                             <ul>
                                 <li><a href="https://www.curbon.jp/" target="_blank" rel="noopener" class="hov">運営会社</a></li>
                                 <li><a href="https://www.curbon.jp/pages/terms" target="_blank" rel="noopener" class="hov">利用規約</a></li>
-                                <li><a href="https://www.curbon.jp/pages/privacy" target="_blank" rel="noopener" class="hov">プライバシーポリシー</a></li>
-                                <li><a href="https://www.curbon.jp/pages/commercial-act" target="_blank" rel="noopener" class="hov">特定商取引法に基づく表記</a></li>
+                                <li><a href="https://www.curbon.jp/pages/privacy" target="_blank" rel="noopener" class="hov">プライバシー<br class="d-n md-d-b sm-d-n">ポリシー</a></li>
+                                <li><a href="https://www.curbon.jp/pages/commercial-act" target="_blank" rel="noopener" class="hov">特定商取引法に<br class="d-n md-d-b sm-d-n">基づく表記</a></li>
+                                <li><a href="https://company.curbon.jp/contact" target="_blank" rel="noopener" class="hov">お問い合わせ</a></li>
                             </ul>
                         </div>
                     </div>

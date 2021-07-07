@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="cols jc-c pt70 sm-pt60">
+        <div class="cols jc-c pt70 md-pt60">
             <div class="col-11 col-sm-12">
                 <?php $args = array(
                     'post_type' => 'specials',
@@ -88,7 +88,7 @@
                 <?php wp_reset_postdata(); ?>
             </div>
         </div>
-        <div class="cols cols-wide pt120 sm-pt80">
+        <div class="cols cols-wide pt120 md-pt100 sm-pt80">
             <div class="col-12">
                 <!-- .tabContents -->
                 <div class="tabContents">

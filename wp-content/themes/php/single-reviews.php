@@ -37,7 +37,7 @@
                                         } ?>
                                     </ul>
                                     <!-- .article-sentence -->
-                                    <div class="article-sentence pt90 sm-pt60">
+                                    <div class="article-sentence pt30 sm-pt20">
                                         <?php the_content(); ?>
                                     </div>
                                 </article>
@@ -83,7 +83,7 @@
                                     </div>
                                 <?php } ?>
                                 <!-- .article-pager -->
-                                <div class="article-pager pt60 sm-pt30">
+                                <div class="article-pager mt100 sm-mt70">
                                     <?php
                                     $prevpost = get_adjacent_post(false, '', true);
                                     $nextpost = get_adjacent_post(false, '', false);

@@ -43,6 +43,9 @@
 		position: relative;
 		color: $white;
 		text-align: left;
+		@include mq(md) {
+			font-size: 90%;
+		}
 		&::before {
 			content: "";
 			position: absolute;
@@ -51,6 +54,10 @@
 			height: 140px;
 			left: 0;
 			top: calc(50% - 70px);
+			@include mq(md) {
+				height: 180px;
+				top: calc(50% - 90px);
+			}
 			@include mq(sm) {
 				display: none;
 			}
@@ -69,16 +76,23 @@
 				text-align: center;
 			}
 			li {
-				padding: 0 15px 0 19px;;
+				padding: 0 15px 0 19px;
 				position: relative;
 				font-family: $en1;
 				color: $white;
+				@include mq(md) {
+					padding: 0 13px 0 17px;
+					font-size: 90%;
+				}
 				@include mq(sm) {
 					padding: 15px 0;
 					border-bottom: 1px dashed #ffffff4f;
 				}
 				&:first-child {
 					padding: 0 15px 0 0;
+					@include mq(md) {
+						padding: 0 9px 0 0;
+					}
 					@include mq(sm) {
 						padding: 15px 0;
 						border-top: 1px dashed #ffffff4f;

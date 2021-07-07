@@ -39,10 +39,10 @@
                                                     <?php } ?>
                                                 <?php } elseif ($post->post_type == 'reviews') { ?>
                                                     <!-- 機材レビューカテゴリ -->
-                                                    <span class="feedBasic-category">機材レビュー</span>
+                                                    <span class="feedBasic-category">Review</span>
                                                 <?php } elseif ($post->post_type == 'post') { ?>
                                                     <!-- お知らせカテゴリ -->
-                                                    <span class="feedBasic-category">お知らせ</span>
+                                                    <span class="feedBasic-category">News</span>
                                                 <?php } ?>
                                                 <span class="feedBasic-date"><?php the_time("Y" . ".m" . ".d"); ?></span>
                                             </div>
