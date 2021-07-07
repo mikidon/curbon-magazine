@@ -1,5 +1,5 @@
 <!-- .footer -->
-<footer class="footer js-scroll">
+<footer class="footer">
     <!-- .messageBlock -->
     <!--<div class="messageBlock">
         <div class="cols">
@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>-->
-    <div class="bgc-black ptb60">
+    <div class="bgc-black ptb60 js-scroll">
         <!-- バナー郡 -->
         <!--<div class="cols ptb30 sm-ptb20">
             <div class="col-12">
@@ -33,7 +33,7 @@
                     </a>
                     <div class="ml50 pl50 sm-ml0 sm-pl0 sm-mt35 footer-txt">
                         <p>日本国内最大級の写真教育サービス運営からスタートしたCURBONはクリエイターの可能性を活かした新しいビジネスを展開するクリエイティブカンパニーです。最高峰の質とカリスマ性を誇るアーティストのネットワークを有するからこそ生まれる価値や、成し遂げられる仕事が、ここにはあります。</p>
-                         <!-- .footer-subLink -->
+                        <!-- .footer-subLink -->
                         <div class="footer-subLink mt30">
                             <ul>
                                 <li><a href="https://www.curbon.jp/" target="_blank" rel="noopener" class="hov">運営会社</a></li>

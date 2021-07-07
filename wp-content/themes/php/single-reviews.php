@@ -6,7 +6,7 @@
     <?php get_header(); ?>
     <!-- .content -->
     <main class="content">
-        <div class="cols ptb50 sm-ptb30 z2 js-scroll">
+        <div class="cols ptb50 sm-ptb30 z2">
             <div class="col-12">
                 <!-- .contentTtl -->
                 <div class="contentTtl">CAMERA / FILM REVIEW</div>
@@ -19,13 +19,10 @@
                     <div class="mainbar col-8 col-sm-12">
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                                 <article class="article articleReview">
-                                    <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'fill'); ?>
-                                    <?php if ($imgset) { ?>
-                                        <figure class="article-eyeCatch">
-                                            <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" alt="アイキャッチ画像">
-                                        </figure>
-                                    <?php } else { ?>
-                                    <?php } ?>
+                                    <figure class="article-eyeCatch">
+                                        <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'fill'); ?>
+                                        <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" alt="アイキャッチ画像">
+                                    </figure>
                                     <?php $categorys = get_the_terms($post->ID, 'reviews-cat');
                                     foreach ($categorys as $category) { ?>
                                         <div class="article-category article-category-<?php echo $category->slug; ?> mt30"><?php echo $category->name; ?></div>

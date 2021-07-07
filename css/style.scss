@@ -89,11 +89,25 @@ body {
 	.hero {
 		/* .heroSlide：ファーストビューのリッチスライド */
 		&Slide {
+			// .heroSlide-wrap
+			&-wrap {
+				display: block;
+				height: 0;
+				padding: 0 0 80%;
+				position: relative;
+				overflow: hidden;
+			}
 			// .heroSlide-item
 			&-item {
 				display: block;
 				background-color: $black;
-				position: relative;
+				background-size: cover;
+				background-position: center center;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
 				overflow: hidden;
 				.heroSlide-item-thumb {
 					opacity: .85;
@@ -912,9 +926,9 @@ body {
 		&-item {
 			display: block;
 			position: relative;
-			padding-top: 60px;
+			margin-top: 60px;
 			@include mq(sm) {
-				padding-top: 30px;
+				paddmargining-top: 30px;
 			}
 			&::after {
 				content: "";
@@ -933,23 +947,23 @@ body {
 			}
 		}
 		&-ttl {
-			padding-top: 20px;
+			margin-top: 20px;
 			font-family: $en1;
 			font-size: 14px;
 			font-style: italic;
 			line-height: 1.2;
 			letter-spacing: .15em;
 			@include mq(sm) {
-				padding-top: 10px;
+				margin-top: 10px;
 				font-size: 14px;
 			}
 		}
 		&-caption {
-			padding-top: 10px;
+			margin-top: 10px;
 			font-weight: bold;
 			line-height: 1.2;
 			@include mq(sm) {
-				padding-top: 5px;
+				margin-top: 5px;
 				font-size: 13px;
 			}
 		}
@@ -993,12 +1007,12 @@ body {
 			}
 		}
 		&-ttl {
-			padding-top: 10px;
+			margin-top: 10px;
 			font-family: $en1;
 			line-height: 1.6;
 			letter-spacing: .15em;
 			@include mq(sm) {
-				padding-top: 5px;
+				margin-top: 5px;
 				font-size: 12px;
 			}
 		}
@@ -1542,6 +1556,8 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-size: cover;
+	background-position: center center;
 	height: 150px;
 	font-weight: bold;
 	color: $white;

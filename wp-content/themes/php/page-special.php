@@ -6,13 +6,13 @@
     <?php get_header(); ?>
     <!-- .content -->
     <main class="content">
-        <div class="cols ptb50 sm-ptb30 z2 js-scroll">
+        <div class="cols ptb50 sm-ptb30 z2">
             <div class="col-12">
                 <!-- .contentTtl -->
-                <div class="contentTtl">SPECIAL CONTENTS</div>
+                <div class="contentTtl"><span class="d-ib js-scroll">SPECIAL CONTENTS</span></div>
             </div>
         </div>
-        <div class="cols js-scroll">
+        <div class="cols">
             <div class="col-12">
                 <?php $args = array(
                     'post_type' => 'specials',
@@ -22,7 +22,7 @@
                 <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                         <article>
                             <!-- .specialBnr -->
-                            <a href="<?php the_permalink(); ?>" class="specialBnr hov">
+                            <a href="<?php the_permalink(); ?>" class="specialBnr hov js-scroll">
                                 <div class="specialBnr-inner">
                                     <span class="specialBnr-label">SPECIAL CONTENTS</span>
                                     <div class="specialBnr-info">
@@ -43,7 +43,7 @@
                 <?php wp_reset_postdata(); ?>
             </div>
         </div>
-        <div class="cols pt90 sm-pt60 js-scroll">
+        <div class="cols pt90 sm-pt60">
             <div class="col-12">
                 <!-- .feedSpecial -->
                 <div class="feedSpecial cols nega gutter-60 gutter-md-30 gutter-sm-20">
@@ -55,12 +55,12 @@
                     <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                             <article class="col-4 col-md-6">
                                 <a href="<?php the_permalink(); ?>" class="feedSpecial-item hov">
-                                    <figure class="feedSpecial-thumb">
+                                    <figure class="feedSpecial-thumb js-scroll">
                                         <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                         <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                     </figure>
-                                    <h2 class="feedSpecial-ttl"><?php the_title(); ?></h2>
-                                    <p class="feedSpecial-caption"><?php the_field('caption'); ?></p>
+                                    <h2 class="feedSpecial-ttl js-scroll"><?php the_title(); ?></h2>
+                                    <p class="feedSpecial-caption js-scroll"><?php the_field('caption'); ?></p>
                                 </a>
                             </article>
                         <?php endwhile; ?>
@@ -70,10 +70,10 @@
                 </div>
             </div>
         </div>
-        <div class="cols jc-c pt120 sm-pt60 js-scroll">
+        <div class="cols jc-c pt120 sm-pt60">
             <div class="col-8 col-md-10 col-sm-12">
                 <!-- .search -->
-                <form class="search" action="<?php echo home_url(); ?>/" method="get">
+                <form class="search js-scroll" action="<?php echo home_url(); ?>/" method="get">
                     <input name="s" type="search" placeholder="キーワード検索" value="<?php if (is_search()) {
                                                                                     the_search_query();
                                                                                 } ?>" />
@@ -82,10 +82,10 @@
                 </form>
             </div>
         </div>
-        <div class="cols pt60 sm-pt30 js-scroll">
+        <div class="cols pt60 sm-pt30">
             <div class="col-12">
                 <!-- .hotWords -->
-                <div class="hotWords">
+                <div class="hotWords js-scroll">
                     <div class="hotWords-ttl">Hot word</div>
                     <ul class="hotWords-tags">
                         <?php $categories = get_terms('post-tag', 'orderby=count&hide_empty=1&order=DESC&number=20'); ?>

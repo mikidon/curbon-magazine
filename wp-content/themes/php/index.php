@@ -7,7 +7,7 @@
     <!-- .content -->
     <main class="topContent content">
         <!-- .hero -->
-        <div class="hero js-scroll">
+        <div class="hero">
             <!-- .heroSlide -->
             <div class="heroSlide">
                 <div class="swiper-container">
@@ -29,18 +29,19 @@
                                     <?php $loop = new WP_Query($args2); ?>
                                     <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                             <article class="swiper-slide">
-                                                <a href="<?php the_permalink(); ?>" class="heroSlide-item">
-                                                    <div class="heroSlide-item-info">
-                                                        <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
-                                                        foreach ($categorys as $category) { ?>
-                                                            <span class="heroSlide-item-category"><?php echo $category->name; ?></span>
-                                                        <?php } ?>
-                                                        <h2 class="heroSlide-item-ttl"><span><?php the_title(); ?></span></h2>
-                                                        <span class="heroSlide-item-btn">Read more</span>
-                                                    </div>
+                                                <div class="heroSlide-wrap">
                                                     <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size700650'); ?>
-                                                    <img class="heroSlide-item-thumb img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="700" height="650" alt="サムネイル">
-                                                </a>
+                                                    <a href="<?php the_permalink(); ?>" class="heroSlide-item js-scroll" style="background-image: url(<?php echo $imgset[0]; ?>);">
+                                                        <div class="heroSlide-item-info">
+                                                            <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
+                                                            foreach ($categorys as $category) { ?>
+                                                                <span class="heroSlide-item-category"><?php echo $category->name; ?></span>
+                                                            <?php } ?>
+                                                            <h2 class="heroSlide-item-ttl"><span><?php the_title(); ?></span></h2>
+                                                            <span class="heroSlide-item-btn">Read more</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
                                             </article>
                                         <?php endwhile; ?>
                                     <?php else : ?>
@@ -56,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="cols jc-c pt70 sm-pt60 js-scroll">
+        <div class="cols jc-c pt70 sm-pt60">
             <div class="col-11 col-sm-12">
                 <?php $args = array(
                     'post_type' => 'specials',
@@ -66,7 +67,7 @@
                 <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                         <article>
                             <!-- .specialBnr -->
-                            <a href="<?php the_permalink(); ?>" class="specialBnr hov">
+                            <a href="<?php the_permalink(); ?>" class="specialBnr hov js-scroll">
                                 <div class="specialBnr-inner">
                                     <span class="specialBnr-label">SPECIAL CONTENTS</span>
                                     <div class="specialBnr-info">
@@ -87,18 +88,18 @@
                 <?php wp_reset_postdata(); ?>
             </div>
         </div>
-        <div class="cols cols-wide pt120 sm-pt80 js-scroll">
+        <div class="cols cols-wide pt120 sm-pt80">
             <div class="col-12">
                 <!-- .tabContents -->
                 <div class="tabContents">
                     <ul class="tabContents-nav">
-                        <li><span class="tabContents-nav-item hov js-tabContents-trg active" data-type="all">All</span></li>
-                        <li><span class="tabContents-nav-item hov js-tabContents-trg" data-type="study">Learn</span></li>
-                        <li><span class="tabContents-nav-item hov js-tabContents-trg" data-type="job">Work</span></li>
-                        <li><span class="tabContents-nav-item hov js-tabContents-trg" data-type="shop">Shop</span></li>
-                        <li><span class="tabContents-nav-item hov js-tabContents-trg" data-type="read">Gallery</span></li>
+                        <li><span class="tabContents-nav-item hov js-tabContents-trg js-scroll active" data-type="all">All</span></li>
+                        <li><span class="tabContents-nav-item hov js-tabContents-trg js-scroll" data-type="study">Learn</span></li>
+                        <li><span class="tabContents-nav-item hov js-tabContents-trg js-scroll" data-type="job">Work</span></li>
+                        <li><span class="tabContents-nav-item hov js-tabContents-trg js-scroll" data-type="shop">Shop</span></li>
+                        <li><span class="tabContents-nav-item hov js-tabContents-trg js-scroll" data-type="read">Gallery</span></li>
                     </ul>
-                    <div class="tabContents-main">
+                    <div class="tabContents-main js-scroll">
                         <!-- .data-type="all" -->
                         <div class="js-tabContents" data-type="all">
                             <div class="cols">
@@ -112,7 +113,7 @@
                                         <?php $loop = new WP_Query($args); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                                 <article class="col-4 col-md-6">
-                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
+                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
                                                         <figure class="feedBasic-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
@@ -154,7 +155,7 @@
                                         <?php $loop = new WP_Query($args); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                                 <article class="col-4 col-md-6">
-                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
+                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
                                                         <figure class="feedBasic-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
@@ -196,7 +197,7 @@
                                         <?php $loop = new WP_Query($args); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                                 <article class="col-4 col-md-6">
-                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
+                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
                                                         <figure class="feedBasic-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
@@ -238,7 +239,7 @@
                                         <?php $loop = new WP_Query($args); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                                 <article class="col-4 col-md-6">
-                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
+                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
                                                         <figure class="feedBasic-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
@@ -280,7 +281,7 @@
                                         <?php $loop = new WP_Query($args); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                                 <article class="col-4 col-md-6">
-                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
+                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
                                                         <figure class="feedBasic-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
@@ -310,21 +311,21 @@
                     </div>
                 </div>
                 <div class="mt60 sm-mt30 ta-c">
-                    <a href="<?php echo home_url(); ?>/magazine" class="btn-round hov">MORE</a>
+                    <a href="<?php echo home_url(); ?>/magazine" class="btn-round hov js-scroll">MORE</a>
                 </div>
             </div>
         </div>
         <!-- .ranking -->
-        <section class="ranking cols-filld-full pt150 sm-pt120 js-scroll">
+        <section class="ranking cols-filld-full pt150 sm-pt120">
             <div class="col-4 col-sm-12">
                 <div class="ranking-info">
                     <div>
-                        <h2 class="ranking-ttl">RANKING</h2>
+                        <h2 class="ranking-ttl js-scroll">RANKING</h2>
                         <div class="ranking-info-inner">
-                            <p class="ranking-read">いま人気の記事<br>
+                            <p class="ranking-read js-scroll">いま人気の記事<br>
                                 おすすめの記事はこちら</p>
                             <div class="ranking-btn">
-                                <a href="<?php echo home_url(); ?>/ranking" class="btn-block-black hov">ALL VIEW</a>
+                                <a href="<?php echo home_url(); ?>/ranking" class="btn-block-black hov js-scroll">ALL VIEW</a>
                             </div>
                         </div>
                     </div>
@@ -352,7 +353,7 @@
                                         <?php $loop = new WP_Query($args2); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                                 <article class="swiper-slide">
-                                                    <a href="<?php the_permalink(); ?>" class="rankingSlide-item hov">
+                                                    <a href="<?php the_permalink(); ?>" class="rankingSlide-item hov js-scroll">
                                                         <figure class="rankingSlide-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="320" height="350" alt="サムネイル">
@@ -363,7 +364,7 @@
                                                         </div>
                                                         <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
                                                         foreach ($categorys as $category) { ?>
-                                                            <span class="rankingSlide-category"><?php echo $category->name; ?></span>
+                                                            <span class="rankingSlide-category js-scroll"><?php echo $category->name; ?></span>
                                                         <?php } ?>
                                                     </a>
                                                 </article>
@@ -385,10 +386,10 @@
                 </div>
             </div>
         </section>
-        <div class="cols jc-c pt120 sm-pt60 js-scroll">
+        <div class="cols jc-c pt120 sm-pt60">
             <div class="col-8 col-md-10 col-sm-12">
                 <!-- .search -->
-                <form class="search" action="<?php echo home_url(); ?>/" method="get">
+                <form class="search js-scroll" action="<?php echo home_url(); ?>/" method="get">
                     <input name="s" type="search" placeholder="キーワード検索" value="<?php if (is_search()) {
                                                                                     the_search_query();
                                                                                 } ?>" />
@@ -397,10 +398,10 @@
                 </form>
             </div>
         </div>
-        <div class="cols jc-c pt60 js-scroll">
+        <div class="cols jc-c pt60">
             <div class="col-12 col-sm-11">
                 <!-- .hotWords -->
-                <div class="hotWords">
+                <div class="hotWords js-scroll">
                     <div class="hotWords-ttl">Hot word</div>
                     <ul class="hotWords-tags">
                         <?php $categories = get_terms('post-tag', 'orderby=count&hide_empty=1&order=DESC&number=20'); ?>
@@ -428,16 +429,16 @@
             </div>
         </div>-->
         <!-- .review -->
-        <section class="review mt120 ptb80 sm-mt80 sm-ptb60 js-scroll bgc-lightgray">
+        <section class="review bgc-lightgray mt120 ptb80 sm-mt80 sm-ptb60">
             <div class="cols">
                 <div class="col-12">
                     <div class="review-info">
                         <div class="col-12"></div>
-                        <h2 class="review-ttl">REVIEW</h2>
+                        <h2 class="review-ttl js-scroll">REVIEW</h2>
                         <div class="review-info-inner">
-                            <p class="review-read">豊富な作例から<br class="d-n sm-d-i">運命のカメラ・レンズ・フィルムを見つけよう</p>
+                            <p class="review-read js-scroll">豊富な作例から<br class="d-n sm-d-i">運命のカメラ・レンズ・フィルムを見つけよう</p>
                             <div class="review-btn">
-                                <a href="<?php echo home_url(); ?>/review" class="btn-block-black hov">ALL VIEW</a>
+                                <a href="<?php echo home_url(); ?>/review" class="btn-block-black hov js-scroll">ALL VIEW</a>
                             </div>
                         </div>
                     </div>
@@ -455,7 +456,7 @@
                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                 <article class="col-3 col-md-4 col-sm-6">
                                     <a href="<?php the_permalink(); ?>" class="feedReview-item hov">
-                                        <figure class="feedReview-thumb">
+                                        <figure class="feedReview-thumb js-scroll">
                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size300300'); ?>
                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="217" height="217" alt="サムネイル">
                                             <?php $categorys = get_the_terms($post->ID, 'reviews-cat');
@@ -463,7 +464,7 @@
                                                 <figcaption class="feedReview-category feedReview-category-<?php echo $category->slug; ?>"><?php echo $category->name; ?></figcaption>
                                             <?php } ?>
                                         </figure>
-                                        <h3 class="feedReview-ttl"><?php the_title(); ?></h3>
+                                        <h3 class="feedReview-ttl js-scroll"><?php the_title(); ?></h3>
                                     </a>
                                 </article>
                             <?php endwhile; ?>
@@ -472,17 +473,17 @@
                         <?php wp_reset_postdata(); ?>
                     </div>
                     <div class="d-n sm-d-b pt40 ta-r">
-                        <a href="<?php echo home_url(); ?>/review" class="btn-block-black hov">ALL VIEW</a>
+                        <a href="<?php echo home_url(); ?>/review" class="btn-block-black hov js-scroll">ALL VIEW</a>
                     </div>
                 </div>
             </div>
         </section>
         <!-- .original -->
-        <section class="original mt150 ptb100 js-scroll">
-            <h2 class="original-ttl">GALLERY</h2>
+        <section class="original mt150 ptb100">
+            <h2 class="original-ttl"><span class="d-ib js-scroll">GALLERY</span></h2>
             <div class="cols">
                 <div class="col-12">
-                    <p class="ta-c">内容かたまり次第バナー・リンク設置</p>
+                    <p class="ta-c js-scroll">内容かたまり次第バナー・リンク設置</p>
                 </div>
             </div>
         </section>
@@ -539,13 +540,13 @@
             </div>
         </section>-->
         <!-- .topNews -->
-        <section class="topNews pt130 sm-pt80 js-scroll">
+        <section class="topNews pt130 sm-pt80">
             <div class="cols">
                 <div class="col-12">
                     <div class="topNews-info">
-                        <h2 class="topNews-ttl">NEWS</h2>
+                        <h2 class="topNews-ttl"><span class="d-ib js-scroll">NEWS</span></h2>
                         <div class="topNews-btn">
-                            <a href="<?php echo home_url(); ?>/new" class="btn-block-black hov">ALL VIEW</a>
+                            <a href="<?php echo home_url(); ?>/new" class="btn-block-black hov js-scroll">ALL VIEW</a>
                         </div>
                     </div>
                 </div>
@@ -561,7 +562,7 @@
                         <?php $loop = new WP_Query($args); ?>
                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                 <article>
-                                    <a href="<?php the_permalink(); ?>" class="feedNewsTop-item hov">
+                                    <a href="<?php the_permalink(); ?>" class="feedNewsTop-item hov js-scroll">
                                         <div class="feedNewsTop-info">
                                             <span class="feedNewsTop-item-date"><?php the_time("Y" . ".m" . ".d"); ?></span>
                                             <?php $categorys = get_the_category();
@@ -578,7 +579,7 @@
                         <?php wp_reset_postdata(); ?>
                     </div>
                     <div class="d-n sm-d-b pt25 ta-r">
-                        <a href="<?php echo home_url(); ?>/new" class="btn-block-black hov">ALL VIEW</a>
+                        <a href="<?php echo home_url(); ?>/new" class="btn-block-black hov js-scroll">ALL VIEW</a>
                     </div>
                 </div>
             </div>

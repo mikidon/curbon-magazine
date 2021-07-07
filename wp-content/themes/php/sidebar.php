@@ -1,7 +1,7 @@
 <!-- .sidebar -->
 <aside class="sidebar col-4 col-sm-12 sm-mt60">
     <!-- .search -->
-    <form class="search" action="<?php echo home_url(); ?>/" method="get">
+    <form class="search js-scroll" action="<?php echo home_url(); ?>/" method="get">
         <input name="s" type="search" placeholder="キーワード検索" value="<?php if (is_search()) {
                                                                         the_search_query();
                                                                     } ?>" />
@@ -9,7 +9,7 @@
         <button type="submit"></button>
     </form>
     <!-- .hotWords -->
-    <div class="hotWords mt30">
+    <div class="hotWords mt30 js-scroll">
         <div class="hotWords-ttl">Hot word</div>
         <ul class="hotWords-tags">
             <?php $categories = get_terms('post-tag', 'orderby=count&hide_empty=1&order=DESC&number=20'); ?>
@@ -24,14 +24,14 @@
         </div>
     </div>
     <!-- .sidebar-nav -->
-    <nav class="sidebar-nav mt30">
+    <nav class="sidebar-nav mt30 js-scroll">
         <ul>
             <li><a href="<?php echo home_url(); ?>/ranking" class="sidebar-nav-item hov">人気ランキング</a></li>
             <li><a href="<?php echo home_url(); ?>/special" class="sidebar-nav-item hov">特集</a></li>
         </ul>
     </nav>
     <!-- .sidebar-nav -->
-    <nav class="sidebar-nav mt30">
+    <nav class="sidebar-nav mt30 js-scroll">
         <ul>
             <li><a href="<?php echo home_url(); ?>/magazine" class="sidebar-nav-item hov">記事一覧</a></li>
             <li><a href="<?php echo home_url(); ?>/magazines-cat/study" class="sidebar-nav-item hov">写真を学ぶ</a></li>
@@ -42,14 +42,14 @@
         </ul>
     </nav>
     <!-- .sidebar-nav -->
-    <nav class="sidebar-nav mt30">
+    <nav class="sidebar-nav mt30 js-scroll">
         <ul>
             <li><a href="<?php echo home_url(); ?>/new" class="sidebar-nav-item hov">お知らせ</a></li>
         </ul>
     </nav>
     <!-- .sidebar-bnr -->
     <div class="sidebar-bnr mt30">
-        <p class="ta-c fz90">バナーが入る予定</p>
+        <p class="ta-c fz90 js-scroll">バナーが入る予定</p>
         <!--<ul>
             <li><a href="" class="slidebar-bnr-item hov"><img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/bnrA1.jpg" width="232" height="92" alt="人気連載 さらお、カメラ買う。"></a></li>
             <li><a href="" class="slidebar-bnr-item hov"><img class="img-rspsv-full" src="<?php echo home_url(); ?>/img/common/bnrA2.jpg" width="232" height="92" alt="#超えるぞ2021 フォトコンテスト"></a></li>

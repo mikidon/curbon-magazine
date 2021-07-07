@@ -24,13 +24,13 @@ $term = $terms[0]->name;
 					<div class="mainbar col-8 col-sm-12">
 						<!-- shame:最低1記事は各カテゴリに必要です -->
 						<?php if ($term == '写真を学ぶ') { ?>
-							<div class="catCard" style="background: url(<?php echo home_url(); ?>/img/common/catCard2.jpg);">写真を学ぶ</div>
+							<div class="catCard" style="background-image: url(<?php echo home_url(); ?>/img/common/catCard2.jpg);">写真を学ぶ</div>
 						<?php } elseif ($term == '写真を仕事にする') { ?>
-							<div class="catCard" style="background: url(<?php echo home_url(); ?>/img/common/catCard3.jpg);">写真を仕事にする</div>
+							<div class="catCard" style="background-image: url(<?php echo home_url(); ?>/img/common/catCard3.jpg);">写真を仕事にする</div>
 						<?php } elseif ($term == 'おかいもの') { ?>
-							<div class="catCard" style="background: url(<?php echo home_url(); ?>/img/common/catCard4.jpg);">おかいもの</div>
+							<div class="catCard" style="background-image: url(<?php echo home_url(); ?>/img/common/catCard4.jpg);">おかいもの</div>
 						<?php } elseif ($term == 'よみもの') { ?>
-							<div class="catCard" style="background: url(<?php echo home_url(); ?>/img/common/catCard5.jpg);">よみもの</div>
+							<div class="catCard" style="background-image: url(<?php echo home_url(); ?>/img/common/catCard5.jpg);">よみもの</div>
 						<?php } ?>
 						<!-- .feedBasic -->
 						<div class="feedBasic cols nega gutter-60 gutter-md-30 gutter-sm-20 pt60">

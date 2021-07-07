@@ -6,18 +6,18 @@
     <?php get_header(); ?>
     <!-- .content -->
     <main class="content">
-        <div class="cols ptb50 sm-ptb30 z2 js-scroll">
+        <div class="cols ptb50 sm-ptb30 z2">
             <div class="col-12">
                 <!-- .contentTtl -->
-                <div class="contentTtl">NEWS</div>
+                <div class="contentTtl"><span class="d-ib js-scroll">NEWS</span></div>
             </div>
         </div>
-        <div class="cols js-scroll">
+        <div class="cols">
             <div class="col-12">
                 <div class="cols nega gutter-50 gutter-sm-30">
                     <!-- .mainbar -->
                     <div class="mainbar col-8 col-sm-12">
-                        <div class="catCard" style="background: url(<?php echo home_url(); ?>/img/common/catCard8.jpg);">お知らせ</div>
+                        <div class="catCard js-scroll" style="background-image: url(<?php echo home_url(); ?>/img/common/catCard8.jpg);">お知らせ</div>
                         <?php $args = array(
                             'post_type' => 'post',
                             'posts_per_page' => 30,
@@ -29,7 +29,7 @@
                         <div class="feedNews cols nega gutter-30 gutter-sm-20 pt50 sm-pt30">
                             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                                     <article class="col-12 col-sm-6">
-                                        <a href="<?php the_permalink(); ?>" class="feedNews-item hov">
+                                        <a href="<?php the_permalink(); ?>" class="feedNews-item hov js-scroll">
                                             <figure class="feedNews-thumb">
                                                 <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                 <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="282" height="202" alt="サムネイル">

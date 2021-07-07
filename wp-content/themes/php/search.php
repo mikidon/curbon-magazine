@@ -6,13 +6,13 @@
     <?php get_header(); ?>
     <!-- .content -->
     <main class="content">
-        <div class="cols ptb50 sm-ptb30 z2 js-scroll">
+        <div class="cols ptb50 sm-ptb30 z2">
             <div class="col-12">
                 <!-- .contentTtl -->
-                <div class="contentTtl fw-b">「<?php the_search_query(); ?>」の検索結果</div>
+                <div class="contentTtl"><span class="d-ib js-scroll">「<?php the_search_query(); ?>」の検索結果</span></div>
             </div>
         </div>
-        <div class="cols js-scroll">
+        <div class="cols">
             <div class="col-12">
                 <div class="cols nega gutter-50 gutter-sm-30">
                     <!-- .mainbar -->
@@ -22,7 +22,7 @@
                             <div class="feedBasic cols nega gutter-60 gutter-md-30 gutter-sm-20">
                                 <?php while (have_posts()) : the_post(); ?>
                                     <article class="col-6">
-                                        <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
+                                        <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
                                             <figure class="feedBasic-thumb">
                                                 <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                 <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">

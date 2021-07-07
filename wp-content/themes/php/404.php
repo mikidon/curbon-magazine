@@ -6,27 +6,27 @@
     <?php get_header(); ?>
     <!-- .content -->
     <main class="content">
-        <div class="cols ptb50 sm-ptb30 z2 js-scroll">
+        <div class="cols ptb50 sm-ptb30 z2">
             <div class="col-12">
                 <!-- .contentTtl -->
-                <div class="contentTtl">404 NOT FOUND</div>
+                <div class="contentTtl"><span class="d-ib js-scroll">404 NOT FOUND</span></div>
             </div>
         </div>
-        <div class="cols js-scroll">
+        <div class="cols">
             <div class="col-12 ta-c">
                 <div class="bb-gray ptb120 sm-ptb60">
-                    <p class="fw-b">ご覧いただいているURLにはページはありません。<br>
+                    <p class="fw-b js-scroll">ご覧いただいているURLにはページはありません。<br>
                         URLの入力間違いか、<br class="d-n sm-d-i">ページが移動している可能性があります。</p>
                     <div class="mt60 sm-mt30 ta-c">
-                        <a href="<?php echo home_url(); ?>/" class="btn-round hov">BACK TO TOP</a>
+                        <a href="<?php echo home_url(); ?>/" class="btn-round hov js-scroll">BACK TO TOP</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="cols jc-c pt120 sm-pt60 js-scroll">
+        <div class="cols jc-c pt120 sm-pt60">
             <div class="col-8 col-md-10 col-sm-12">
                 <!-- .search -->
-                <form class="search" action="<?php echo home_url(); ?>/" method="get">
+                <form class="search js-scroll" action="<?php echo home_url(); ?>/" method="get">
                     <input name="s" type="search" placeholder="キーワード検索" value="<?php if (is_search()) {
                                                                                     the_search_query();
                                                                                 } ?>" />
@@ -35,10 +35,10 @@
                 </form>
             </div>
         </div>
-        <div class="cols pt60 sm-pt30 js-scroll">
+        <div class="cols pt60 sm-pt30">
             <div class="col-12">
                 <!-- .hotWords -->
-                <div class="hotWords">
+                <div class="hotWords js-scroll">
                     <div class="hotWords-ttl">Hot word</div>
                     <ul class="hotWords-tags">
                         <?php $categories = get_terms('post-tag', 'orderby=count&hide_empty=1&order=DESC&number=20'); ?>

@@ -6,22 +6,22 @@
     <?php get_header(); ?>
     <!-- .content -->
     <main class="content">
-        <div class="cols ptb50 sm-ptb30 z2 js-scroll">
+        <div class="cols ptb50 sm-ptb30 z2">
             <div class="col-12">
                 <!-- .contentTtl -->
-                <div class="contentTtl">CURBON MAGAZINE</div>
+                <div class="contentTtl"><span class="d-ib js-scroll">CURBON MAGAZINE</span></div>
             </div>
         </div>
-        <div class="cols js-scroll">
+        <div class="cols">
             <div class="col-12">
                 <div class="cols nega gutter-50 gutter-sm-30">
                     <!-- .mainbar -->
                     <div class="mainbar col-8 col-sm-12">
-                        <div class="catCard" style="background: url(<?php echo home_url(); ?>/img/common/catCard1.jpg);">記事一覧</div>
-                        <!-- <div class="catCard" style="background: url(<?php echo home_url(); ?>/img/common/catCard2.jpg);">写真を学ぶ</div>
-						<div class="catCard" style="background: url(<?php echo home_url(); ?>/img/common/catCard3.jpg);">写真を仕事にする</div>
-						<div class="catCard" style="background: url(<?php echo home_url(); ?>/img/common/catCard4.jpg);">おかいもの</div>
-						<div class="catCard" style="background: url(<?php echo home_url(); ?>/img/common/catCard5.jpg);">よみもの</div> -->
+                        <div class="catCard js-scroll" style="background-image: url(<?php echo home_url(); ?>/img/common/catCard1.jpg);">記事一覧</div>
+                        <!-- <div class="catCard js-scroll" style="background-image: url(<?php echo home_url(); ?>/img/common/catCard2.jpg);">写真を学ぶ</div>
+						<div class="catCard js-scroll" style="background-image: url(<?php echo home_url(); ?>/img/common/catCard3.jpg);">写真を仕事にする</div>
+						<div class="catCard js-scroll" style="background-image: url(<?php echo home_url(); ?>/img/common/catCard4.jpg);">おかいもの</div>
+						<div class="catCard js-scroll" style="background-image: url(<?php echo home_url(); ?>/img/common/catCard5.jpg);">よみもの</div> -->
                         <!-- .feedBasic -->
                         <?php $args = array(
                             'post_type' => 'magazines',
@@ -33,7 +33,7 @@
                         <div class="feedBasic cols nega gutter-60 gutter-md-30 gutter-sm-20 pt60">
                             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                                     <article class="col-6">
-                                        <a href="#" class="feedBasic-item hov">
+                                        <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
                                             <figure class="feedBasic-thumb">
                                                 <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                 <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">

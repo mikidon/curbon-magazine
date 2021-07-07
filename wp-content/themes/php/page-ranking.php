@@ -6,18 +6,18 @@
     <?php get_header(); ?>
     <!-- .content -->
     <main class="content">
-        <div class="cols ptb50 sm-ptb30 z2 js-scroll">
+        <div class="cols ptb50 sm-ptb30 z2">
             <div class="col-12">
                 <!-- .contentTtl -->
-                <div class="contentTtl">RANKING</div>
+                <div class="contentTtl"><span class="d-ib js-scroll">RANKING</span></div>
             </div>
         </div>
-        <div class="cols js-scroll">
+        <div class="cols">
             <div class="col-12">
                 <div class="cols nega gutter-50 gutter-sm-30">
                     <!-- .mainbar -->
                     <div class="mainbar col-8 col-sm-12">
-                        <div class="catCard" style="background: url(<?php echo home_url(); ?>/img/common/catCard6.jpg);">いま人気の記事・おすすめの記事</div>
+                        <div class="catCard js-scroll" style="background-image: url(<?php echo home_url(); ?>/img/common/catCard6.jpg);">いま人気の記事・おすすめの記事</div>
                         <!-- .feedRanking -->
                         <div class="feedRanking cols nega gutter-60 gutter-md-30 gutter-sm-20 pt60">
                             <?php $args = array(
@@ -37,7 +37,7 @@
                                         <?php $loop = new WP_Query($args2); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                                 <article class="col-6">
-                                                    <a href="#" class="feedRanking-item hov">
+                                                    <a href="#" class="feedRanking-item hov js-scroll">
                                                         <figure class="feedRanking-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="282" height="202" alt="サムネイル">
