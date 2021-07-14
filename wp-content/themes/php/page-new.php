@@ -29,8 +29,8 @@
                         <div class="feedNews cols nega gutter-30 gutter-sm-20 pt50 sm-pt30">
                             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                                     <article class="col-12 col-sm-6">
-                                        <a href="<?php the_permalink(); ?>" class="feedNews-item hov js-scroll">
-                                            <figure class="feedNews-thumb">
+                                        <a href="<?php the_permalink(); ?>" class="feedNews-item hov">
+                                            <figure class="feedNews-thumb js-scroll">
                                                 <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                 <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="282" height="202" alt="サムネイル">
                                             </figure>
@@ -38,11 +38,11 @@
                                                 <div class="feedNews-subInfo">
                                                     <?php $categorys = get_the_category();
                                                     foreach ($categorys as $category) { ?>
-                                                        <span class="feedNews-category"><?php echo $category->name; ?></span>
+                                                        <span class="feedNews-category js-scroll"><?php echo $category->name; ?></span>
                                                     <?php } ?>
-                                                    <span class="feedNews-date"><?php the_time("Y" . ".m" . ".d"); ?></span>
+                                                    <span class="feedNews-date js-scroll"><?php the_time("Y" . ".m" . ".d"); ?></span>
                                                 </div>
-                                                <h3 class="feedNews-ttl"><?php the_title(); ?></h3>
+                                                <h3 class="feedNews-ttl js-scroll"><?php the_title(); ?></h3>
                                             </div>
                                         </a>
                                     </article>

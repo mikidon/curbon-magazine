@@ -16,7 +16,7 @@
 
 html {
 	opacity: 0;
-	transition: opacity 100ms cubic-bezier(0.5, 1, 0.89, 1);
+	transition: opacity 50ms cubic-bezier(0.5, 1, 0.89, 1);
 	&.wf-active {
 		opacity: 1;
 	}
@@ -238,26 +238,29 @@ body {
 			}
 			&-item {
 				display: block;
-				border-top: 1px solid $black;
-				border-right: 1px solid $black;
-				border-left: 1px solid $black;
-				padding: 18px 40px;
-				font-family: $en1;
-				line-height: 1;
-				letter-spacing: .1em;
-				text-align: center;
-				cursor: pointer;
-				@include mq(md) {
-					padding: 18px 30px;
-				}
-				@include mq(sm) {
-					border: 1px solid $black;
-					padding: 12px 10px;
-					font-size: 13px;
-				}
-				&.active {
-					background-color: $black;
-					color: $white;
+				&-btn {
+					display: block;
+					border-top: 1px solid $black;
+					border-right: 1px solid $black;
+					border-left: 1px solid $black;
+					padding: 18px 40px;
+					font-family: $en1;
+					line-height: 1;
+					letter-spacing: .1em;
+					text-align: center;
+					cursor: pointer;
+					@include mq(md) {
+						padding: 18px 30px;
+					}
+					@include mq(sm) {
+						border: 1px solid $black;
+						padding: 12px 10px;
+						font-size: 13px;
+					}
+					&.active {
+						background-color: $black;
+						color: $white;
+					}
 				}
 			}
 		}
@@ -839,6 +842,7 @@ body {
 	&Ranking {
 		margin-top: -60px;
 		position: relative;
+		z-index: 0;
 		@include mq(sm) {
 			margin-top: 0px;
 		}
@@ -896,18 +900,18 @@ body {
 		}
 		&-date {
 			@include style-dateText;
-			padding-left: 15px;
+			margin-left: 15px;
 		}
 		&-ttl {
-			padding-top: 20px;
+			margin-top: 20px;
 			font-weight: bold;
 			@include mq(sm) {
-				padding-top: 10px;
+				margin-top: 10px;
 				font-size: 13px;
 			}
 		}
 		&-text {
-			padding-top: 15px;
+			margin-top: 15px;
 			font-size: 12px;
 			line-height: 1.8;
 			color: #575757;
@@ -925,7 +929,7 @@ body {
 		}
 		&-thumb {
 			position: relative;
-			&::after {
+			&::before {
 				content: counter(ranking, decimal-leading-zero);
 				font-family: $en1;
 				font-size: 40px;
@@ -1064,9 +1068,10 @@ body {
 			}
 		}
 		&-info {
-			padding-left: 40px;
+			flex: 1 0 0%;
+			margin-left: 40px;
 			@include mq(sm) {
-				padding-left: 0;
+				margin-left: 0;
 			}
 		}
 		&-subInfo {
@@ -1083,17 +1088,17 @@ body {
 		}
 		&-date {
 			@include style-dateText;
-			padding-left: 15px;
+			margin-left: 15px;
 			@include mq(sm) {
-				padding-top: 10px;
-				padding-left: 0;
+				margin-top: 10px;
+				margin-left: 0;
 			}
 		}
 		&-ttl {
-			padding-top: 20px;
+			margin-top: 20px;
 			font-weight: bold;
 			@include mq(sm) {
-				padding-top: 10px;
+				margin-top: 10px;
 				font-size: 13px;
 			}
 		}
@@ -1279,7 +1284,7 @@ body {
 		align-items: center;
 		margin-top: 30px;
 		.article-date {
-			padding-left: 20px;
+			margin-left: 20px;
 		}
 	}
 	&-date {
@@ -1294,7 +1299,7 @@ body {
 	&-tags {
 		display: flex;
 		flex-wrap: wrap;
-		margin-top: -5px;
+		// margin-top: -5px;
 		li {
 			margin: 5px 5px 0 0;
 		}

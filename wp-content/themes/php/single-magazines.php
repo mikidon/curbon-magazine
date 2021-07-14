@@ -33,7 +33,7 @@
                                     <h1 class="article-ttl mt30 js-scroll"><?php the_title(); ?></h1>
                                     <?php $categories = get_the_terms($post->ID, 'post-tag'); ?>
                                     <?php if ($categories) { ?>
-                                        <ul class="article-tags pt30 js-scroll">
+                                        <ul class="article-tags mt30 js-scroll">
                                             <?php foreach ($categories as $category) { ?>
                                                 <li><a href="<?php echo home_url(); ?>/?s=<?php echo $category->name; ?>&type=post" class="article-tags-item hov"><?php echo $category->name; ?></a></li>
                                             <?php } ?>
@@ -49,8 +49,10 @@
                                         <?php $rows = get_field('addBtn'); ?>
                                         <?php foreach ($rows as $row) { ?>
                                             <div class="pt30">
-                                                <!-- .article-externalLink -->
-                                                <a href="<?php echo $row['link']; ?>" class="article-externalLink hov" target="_blank" rel="noopener"><?php echo $row['text']; ?></a>
+                                                <span class="d-ib js-scroll">
+                                                    <!-- .article-externalLink -->
+                                                    <a href="<?php echo $row['link']; ?>" class="article-externalLink hov" target="_blank" rel="noopener"><?php echo $row['text']; ?></a>
+                                                </span>
                                             </div>
                                         <?php } ?>
                                     </div>

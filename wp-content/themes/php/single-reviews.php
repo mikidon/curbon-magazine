@@ -9,17 +9,17 @@
         <div class="cols ptb50 sm-ptb30 z2">
             <div class="col-12">
                 <!-- .contentTtl -->
-                <div class="contentTtl">CAMERA / FILM REVIEW</div>
+                <div class="contentTtl"><span class="d-ib js-scroll">CAMERA / FILM REVIEW</span></div>
             </div>
         </div>
-        <div class="cols js-scroll">
+        <div class="cols">
             <div class="col-12">
                 <div class="cols nega gutter-50 gutter-sm-30">
                     <!-- .mainbar -->
                     <div class="mainbar col-8 col-sm-12">
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                                 <article class="article articleReview">
-                                    <figure class="article-eyeCatch">
+                                    <figure class="article-eyeCatch js-scroll">
                                         <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'fill'); ?>
                                         <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" alt="アイキャッチ画像">
                                     </figure>
@@ -27,8 +27,8 @@
                                     foreach ($categorys as $category) { ?>
                                         <div class="article-category article-category-<?php echo $category->slug; ?> mt30"><?php echo $category->name; ?></div>
                                     <?php } ?>
-                                    <h1 class="article-ttl"><?php the_title(); ?></h1>
-                                    <ul class="article-tags pt30">
+                                    <h1 class="article-ttl"><span class="d-b js-scroll"><?php the_title(); ?></span></h1>
+                                    <ul class="article-tags mt30 js-scroll">
                                         <?php $categories = get_the_terms($post->ID, 'post-tag');
                                         if ($categories) {
                                             foreach ($categories as $category) { ?>
@@ -46,8 +46,10 @@
                                         <?php $rows = get_field('addBtn'); ?>
                                         <?php foreach ($rows as $row) { ?>
                                             <div class="pt30">
-                                                <!-- .article-externalLink -->
-                                                <a href="<?php echo $row['link']; ?>" class="article-externalLink hov" target="_blank" rel="noopener"><?php echo $row['text']; ?></a>
+                                                <span class="d-ib js-scroll">
+                                                    <!-- .article-externalLink -->
+                                                    <a href="<?php echo $row['link']; ?>" class="article-externalLink hov" target="_blank" rel="noopener"><?php echo $row['text']; ?></a>
+                                                </span>
                                             </div>
                                         <?php } ?>
                                     </div>
@@ -91,15 +93,21 @@
                                     <div class="cols nega gutter-30 gutter-sm-10">
                                         <div class="col-4 col-sm-3">
                                             <?php if ($prevpost) { ?>
-                                                <a href="<?php echo get_permalink($prevpost->ID) ?>" class="article-pager-item hov">PREV</a>
+                                                <span class="d-b js-scroll">
+                                                    <a href="<?php echo get_permalink($prevpost->ID) ?>" class="article-pager-item hov">PREV</a>
+                                                </span>
                                             <?php } ?>
                                         </div>
                                         <div class="col-4 col-sm-6">
-                                            <a href="<?php echo home_url(); ?>/review" class="article-pager-item hov">ALL VIEW</a>
+                                            <span class="d-b js-scroll">
+                                                <a href="<?php echo home_url(); ?>/review" class="article-pager-item hov">ALL VIEW</a>
+                                            </span>
                                         </div>
                                         <div class="col-4 col-sm-3">
                                             <?php if ($nextpost) { ?>
-                                                <a href="<?php echo get_permalink($nextpost->ID) ?>" class="article-pager-item hov">NEXT</a>
+                                                <span class="d-b js-scroll">
+                                                    <a href="<?php echo get_permalink($nextpost->ID) ?>" class="article-pager-item hov">NEXT</a>
+                                                </span>
                                             <?php } ?>
                                         </div>
                                     </div>

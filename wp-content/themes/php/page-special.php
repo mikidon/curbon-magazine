@@ -20,9 +20,9 @@
                 ); ?>
                 <?php $loop = new WP_Query($args); ?>
                 <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
-                        <article>
+                        <article class="js-scroll">
                             <!-- .specialBnr -->
-                            <a href="<?php the_permalink(); ?>" class="specialBnr hov js-scroll">
+                            <a href="<?php the_permalink(); ?>" class="specialBnr hov">
                                 <div class="specialBnr-inner">
                                     <span class="specialBnr-label">SPECIAL CONTENTS</span>
                                     <div class="specialBnr-info">

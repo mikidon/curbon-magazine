@@ -28,10 +28,10 @@
                                     ); ?>
                                     <?php $loop = new WP_Query($args2); ?>
                                     <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
-                                            <article class="swiper-slide">
-                                                <div class="heroSlide-wrap">
+                                            <article class="swiper-slide js-scroll">
+                                                <div class="heroSlide-wrap hov">
                                                     <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size700650'); ?>
-                                                    <a href="<?php the_permalink(); ?>" class="heroSlide-item js-scroll" style="background-image: url(<?php echo $imgset[0]; ?>);">
+                                                    <a href="<?php the_permalink(); ?>" class="heroSlide-item" style="background-image: url(<?php echo $imgset[0]; ?>);">
                                                         <div class="heroSlide-item-info">
                                                             <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
                                                             foreach ($categorys as $category) { ?>
@@ -65,9 +65,9 @@
                 ); ?>
                 <?php $loop = new WP_Query($args); ?>
                 <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
-                        <article>
+                        <article class="js-scroll">
                             <!-- .specialBnr -->
-                            <a href="<?php the_permalink(); ?>" class="specialBnr hov js-scroll">
+                            <a href="<?php the_permalink(); ?>" class="specialBnr hov">
                                 <div class="specialBnr-inner">
                                     <span class="specialBnr-label">SPECIAL CONTENTS</span>
                                     <div class="specialBnr-info">
@@ -93,11 +93,21 @@
                 <!-- .tabContents -->
                 <div class="tabContents">
                     <ul class="tabContents-nav">
-                        <li><span class="tabContents-nav-item hov js-tabContents-trg js-scroll active" data-type="all">All</span></li>
-                        <li><span class="tabContents-nav-item hov js-tabContents-trg js-scroll" data-type="study">Learn</span></li>
-                        <li><span class="tabContents-nav-item hov js-tabContents-trg js-scroll" data-type="job">Work</span></li>
-                        <li><span class="tabContents-nav-item hov js-tabContents-trg js-scroll" data-type="shop">Shop</span></li>
-                        <li><span class="tabContents-nav-item hov js-tabContents-trg js-scroll" data-type="read">Gallery</span></li>
+                        <li>
+                            <a href="javascript:void(0)" class="tabContents-nav-item hov"><span class="tabContents-nav-item-btn js-tabContents-trg js-scroll active" data-type="all">All</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="tabContents-nav-item hov"><span class="tabContents-nav-item-btn js-tabContents-trg js-scroll" data-type="study">Learn</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="tabContents-nav-item hov"><span class="tabContents-nav-item-btn js-tabContents-trg js-scroll" data-type="job">Work</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="tabContents-nav-item hov"><span class="tabContents-nav-item-btn js-tabContents-trg js-scroll" data-type="shop">Shop</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="tabContents-nav-item hov"><span class="tabContents-nav-item-btn js-tabContents-trg js-scroll" data-type="read">Gallery</span></a>
+                        </li>
                     </ul>
                     <div class="tabContents-main js-scroll">
                         <!-- .data-type="all" -->
@@ -113,23 +123,23 @@
                                         <?php $loop = new WP_Query($args); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                                 <article class="col-4 col-md-6">
-                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
-                                                        <figure class="feedBasic-thumb">
+                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
+                                                        <figure class="feedBasic-thumb js-scroll">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedBasic-subInfo">
                                                             <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
                                                             foreach ($categorys as $category) { ?>
-                                                                <span class="feedBasic-category"><?php echo $category->name; ?></span>
+                                                                <span class="feedBasic-category js-scroll"><?php echo $category->name; ?></span>
                                                             <?php } ?>
-                                                            <span class="feedBasic-date"><?php the_time("Y" . ".m" . ".d"); ?></span>
+                                                            <span class="feedBasic-date js-scroll"><?php the_time("Y" . ".m" . ".d"); ?></span>
                                                         </div>
-                                                        <h2 class="feedBasic-ttl js-matchHeight"><?php the_title(); ?></h2>
-                                                        <p class="feedBasic-text"><?php $inText = get_the_excerpt();
-                                                                                    if (mb_strlen($inText) > 60) { ?><?php echo mb_substr($inText, 0, 60); ?>...<?php } else {
-                                                                                                                                                                echo $inText;
-                                                                                                                                                            } ?></p>
+                                                        <h2 class="feedBasic-ttl js-matchHeight js-scroll"><?php the_title(); ?></h2>
+                                                        <p class="feedBasic-text js-scroll"><?php $inText = get_the_excerpt();
+                                                                                            if (mb_strlen($inText) > 60) { ?><?php echo mb_substr($inText, 0, 60); ?>...<?php } else {
+                                                                                                                                                                        echo $inText;
+                                                                                                                                                                    } ?></p>
                                                     </a>
                                                 </article>
                                             <?php endwhile; ?>
@@ -155,23 +165,23 @@
                                         <?php $loop = new WP_Query($args); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                                 <article class="col-4 col-md-6">
-                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
-                                                        <figure class="feedBasic-thumb">
+                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
+                                                        <figure class="feedBasic-thumb js-scroll">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedBasic-subInfo">
                                                             <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
                                                             foreach ($categorys as $category) { ?>
-                                                                <span class="feedBasic-category"><?php echo $category->name; ?></span>
+                                                                <span class="feedBasic-category js-scroll"><?php echo $category->name; ?></span>
                                                             <?php } ?>
-                                                            <span class="feedBasic-date"><?php the_time("Y" . ".m" . ".d"); ?></span>
+                                                            <span class="feedBasic-date js-scroll"><?php the_time("Y" . ".m" . ".d"); ?></span>
                                                         </div>
-                                                        <h2 class="feedBasic-ttl js-matchHeight"><?php the_title(); ?></h2>
-                                                        <p class="feedBasic-text"><?php $inText = get_the_excerpt();
-                                                                                    if (mb_strlen($inText) > 60) { ?><?php echo mb_substr($inText, 0, 60); ?>...<?php } else {
-                                                                                                                                                                echo $inText;
-                                                                                                                                                            } ?></p>
+                                                        <h2 class="feedBasic-ttl js-matchHeight js-scroll"><?php the_title(); ?></h2>
+                                                        <p class="feedBasic-text js-scroll"><?php $inText = get_the_excerpt();
+                                                                                            if (mb_strlen($inText) > 60) { ?><?php echo mb_substr($inText, 0, 60); ?>...<?php } else {
+                                                                                                                                                                        echo $inText;
+                                                                                                                                                                    } ?></p>
                                                     </a>
                                                 </article>
                                             <?php endwhile; ?>
@@ -197,23 +207,23 @@
                                         <?php $loop = new WP_Query($args); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                                 <article class="col-4 col-md-6">
-                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
-                                                        <figure class="feedBasic-thumb">
+                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
+                                                        <figure class="feedBasic-thumb js-scroll">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
-                                                        <div class="feedBasic-subInfo">
+                                                        <div class="feedBasic-subInfo js-scroll">
                                                             <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
                                                             foreach ($categorys as $category) { ?>
                                                                 <span class="feedBasic-category"><?php echo $category->name; ?></span>
                                                             <?php } ?>
                                                             <span class="feedBasic-date"><?php the_time("Y" . ".m" . ".d"); ?></span>
                                                         </div>
-                                                        <h2 class="feedBasic-ttl js-matchHeight"><?php the_title(); ?></h2>
-                                                        <p class="feedBasic-text"><?php $inText = get_the_excerpt();
-                                                                                    if (mb_strlen($inText) > 60) { ?><?php echo mb_substr($inText, 0, 60); ?>...<?php } else {
-                                                                                                                                                                echo $inText;
-                                                                                                                                                            } ?></p>
+                                                        <h2 class="feedBasic-ttl js-matchHeight js-scroll"><?php the_title(); ?></h2>
+                                                        <p class="feedBasic-text js-scroll"><?php $inText = get_the_excerpt();
+                                                                                            if (mb_strlen($inText) > 60) { ?><?php echo mb_substr($inText, 0, 60); ?>...<?php } else {
+                                                                                                                                                                        echo $inText;
+                                                                                                                                                                    } ?></p>
                                                     </a>
                                                 </article>
                                             <?php endwhile; ?>
@@ -239,23 +249,23 @@
                                         <?php $loop = new WP_Query($args); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                                 <article class="col-4 col-md-6">
-                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
-                                                        <figure class="feedBasic-thumb">
+                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
+                                                        <figure class="feedBasic-thumb js-scroll">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
-                                                        <div class="feedBasic-subInfo">
+                                                        <div class="feedBasic-subInfo js-scroll">
                                                             <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
                                                             foreach ($categorys as $category) { ?>
-                                                                <span class="feedBasic-category"><?php echo $category->name; ?></span>
+                                                                <span class="feedBasic-category js-scroll"><?php echo $category->name; ?></span>
                                                             <?php } ?>
-                                                            <span class="feedBasic-date"><?php the_time("Y" . ".m" . ".d"); ?></span>
+                                                            <span class="feedBasic-date js-scroll"><?php the_time("Y" . ".m" . ".d"); ?></span>
                                                         </div>
-                                                        <h2 class="feedBasic-ttl js-matchHeight"><?php the_title(); ?></h2>
-                                                        <p class="feedBasic-text"><?php $inText = get_the_excerpt();
-                                                                                    if (mb_strlen($inText) > 60) { ?><?php echo mb_substr($inText, 0, 60); ?>...<?php } else {
-                                                                                                                                                                echo $inText;
-                                                                                                                                                            } ?></p>
+                                                        <h2 class="feedBasic-ttl js-matchHeight js-scroll"><?php the_title(); ?></h2>
+                                                        <p class="feedBasic-text js-scroll"><?php $inText = get_the_excerpt();
+                                                                                            if (mb_strlen($inText) > 60) { ?><?php echo mb_substr($inText, 0, 60); ?>...<?php } else {
+                                                                                                                                                                        echo $inText;
+                                                                                                                                                                    } ?></p>
                                                     </a>
                                                 </article>
                                             <?php endwhile; ?>
@@ -281,23 +291,23 @@
                                         <?php $loop = new WP_Query($args); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
                                                 <article class="col-4 col-md-6">
-                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
-                                                        <figure class="feedBasic-thumb">
+                                                    <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
+                                                        <figure class="feedBasic-thumb js-scroll">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
-                                                        <div class="feedBasic-subInfo">
+                                                        <div class="feedBasic-subInfo js-scroll">
                                                             <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
                                                             foreach ($categorys as $category) { ?>
-                                                                <span class="feedBasic-category"><?php echo $category->name; ?></span>
+                                                                <span class="feedBasic-category js-scroll"><?php echo $category->name; ?></span>
                                                             <?php } ?>
-                                                            <span class="feedBasic-date"><?php the_time("Y" . ".m" . ".d"); ?></span>
+                                                            <span class="feedBasic-date js-scroll"><?php the_time("Y" . ".m" . ".d"); ?></span>
                                                         </div>
-                                                        <h2 class="feedBasic-ttl js-matchHeight"><?php the_title(); ?></h2>
-                                                        <p class="feedBasic-text"><?php $inText = get_the_excerpt();
-                                                                                    if (mb_strlen($inText) > 60) { ?><?php echo mb_substr($inText, 0, 60); ?>...<?php } else {
-                                                                                                                                                                echo $inText;
-                                                                                                                                                            } ?></p>
+                                                        <h2 class="feedBasic-ttl js-matchHeight js-scroll"><?php the_title(); ?></h2>
+                                                        <p class="feedBasic-text js-scroll"><?php $inText = get_the_excerpt();
+                                                                                            if (mb_strlen($inText) > 60) { ?><?php echo mb_substr($inText, 0, 60); ?>...<?php } else {
+                                                                                                                                                                        echo $inText;
+                                                                                                                                                                    } ?></p>
                                                     </a>
                                                 </article>
                                             <?php endwhile; ?>
@@ -311,7 +321,7 @@
                     </div>
                 </div>
                 <div class="mt60 sm-mt30 ta-c">
-                    <a href="<?php echo home_url(); ?>/magazine" class="btn-round hov js-scroll">MORE</a>
+                    <a href="<?php echo home_url(); ?>/magazine" class="btn-round js-scroll">MORE</a>
                 </div>
             </div>
         </div>
@@ -320,12 +330,12 @@
             <div class="col-4 col-sm-12">
                 <div class="ranking-info">
                     <div>
-                        <h2 class="ranking-ttl js-scroll">RANKING</h2>
+                        <h2 class="ranking-ttl"><span class="d-ib js-scroll">RANKING</span></h2>
                         <div class="ranking-info-inner">
                             <p class="ranking-read js-scroll">いま人気の記事<br>
                                 おすすめの記事はこちら</p>
-                            <div class="ranking-btn">
-                                <a href="<?php echo home_url(); ?>/ranking" class="btn-block-black hov js-scroll">ALL VIEW</a>
+                            <div class="ranking-btn js-scroll">
+                                <a href="<?php echo home_url(); ?>/ranking" class="btn-block-black hov">ALL VIEW</a>
                             </div>
                         </div>
                     </div>
@@ -352,8 +362,8 @@
                                         ); ?>
                                         <?php $loop = new WP_Query($args2); ?>
                                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
-                                                <article class="swiper-slide">
-                                                    <a href="<?php the_permalink(); ?>" class="rankingSlide-item hov js-scroll">
+                                                <article class="swiper-slide js-scroll">
+                                                    <a href="<?php the_permalink(); ?>" class="rankingSlide-item hov">
                                                         <figure class="rankingSlide-thumb">
                                                             <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="320" height="350" alt="サムネイル">
@@ -434,11 +444,11 @@
                 <div class="col-12">
                     <div class="review-info">
                         <div class="col-12"></div>
-                        <h2 class="review-ttl js-scroll">REVIEW</h2>
+                        <h2 class="review-ttl"><span class="d-ib js-scroll">REVIEW</span></h2>
                         <div class="review-info-inner">
                             <p class="review-read js-scroll">豊富な作例から<br class="d-n sm-d-i">運命のカメラ・レンズ・フィルムを見つけよう</p>
-                            <div class="review-btn">
-                                <a href="<?php echo home_url(); ?>/review" class="btn-block-black hov js-scroll">ALL VIEW</a>
+                            <div class="review-btn js-scroll">
+                                <a href="<?php echo home_url(); ?>/review" class="btn-block-black hov">ALL VIEW</a>
                             </div>
                         </div>
                     </div>
@@ -545,8 +555,8 @@
                 <div class="col-12">
                     <div class="topNews-info">
                         <h2 class="topNews-ttl"><span class="d-ib js-scroll">NEWS</span></h2>
-                        <div class="topNews-btn">
-                            <a href="<?php echo home_url(); ?>/new" class="btn-block-black hov js-scroll">ALL VIEW</a>
+                        <div class="topNews-btn js-scroll">
+                            <a href="<?php echo home_url(); ?>/new" class="btn-block-black hov">ALL VIEW</a>
                         </div>
                     </div>
                 </div>
@@ -561,8 +571,8 @@
                         ); ?>
                         <?php $loop = new WP_Query($args); ?>
                         <?php if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); ?>
-                                <article>
-                                    <a href="<?php the_permalink(); ?>" class="feedNewsTop-item hov js-scroll">
+                                <article class="js-scroll">
+                                    <a href="<?php the_permalink(); ?>" class="feedNewsTop-item hov">
                                         <div class="feedNewsTop-info">
                                             <span class="feedNewsTop-item-date"><?php the_time("Y" . ".m" . ".d"); ?></span>
                                             <?php $categorys = get_the_category();

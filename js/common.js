@@ -51,6 +51,7 @@ if ($('.topContent').length) {
 	// .js-tabContents-trg
 	$('.js-tabContents-trg').click(function () {
 		var type = $(this).data('type');
+		console.log(type);
 		$('.js-tabContents-trg').removeClass('active');
 		$(this).addClass('active');
 		$('.js-tabContents').hide();

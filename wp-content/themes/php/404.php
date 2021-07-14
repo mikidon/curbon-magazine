@@ -18,7 +18,7 @@
                     <p class="fw-b js-scroll">ご覧いただいているURLにはページはありません。<br>
                         URLの入力間違いか、<br class="d-n sm-d-i">ページが移動している可能性があります。</p>
                     <div class="mt60 sm-mt30 ta-c">
-                        <a href="<?php echo home_url(); ?>/" class="btn-round hov js-scroll">BACK TO TOP</a>
+                        <a href="<?php echo home_url(); ?>/" class="btn-round js-scroll">BACK TO TOP</a>
                     </div>
                 </div>
             </div>

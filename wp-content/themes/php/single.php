@@ -9,10 +9,10 @@
         <div class="cols ptb50 sm-ptb30 z2">
             <div class="col-12">
                 <!-- .contentTtl -->
-                <div class="contentTtl">NEWS</div>
+                <div class="contentTtl"><span class="d-ib js-scroll">NEWS</span></div>
             </div>
         </div>
-        <div class="cols js-scroll">
+        <div class="cols">
             <div class="col-12">
                 <div class="cols nega gutter-50 gutter-sm-30">
                     <!-- .mainbar -->
@@ -25,10 +25,10 @@
                                             $category = get_the_category();
                                             $cat = $category[0];
                                             ?>
-                                            <div class="article-category"><?php echo $cat->name; ?></div>
-                                            <time class="article-date"><?php the_time("Y" . ".m" . ".d"); ?></time>
+                                            <div class="article-category js-scroll"><?php echo $cat->name; ?></div>
+                                            <time class="article-date js-scroll"><?php the_time("Y" . ".m" . ".d"); ?></time>
                                         </div>
-                                        <h1 class="article-ttl mt30 sm-mt20"><?php the_title(); ?></h1>
+                                        <h1 class="article-ttl mt30 sm-mt20 js-scroll"><?php the_title(); ?></h1>
                                     </div>
                                     <!-- .article-sentence -->
                                     <div class="article-sentence pt30 sm-pt20">
@@ -40,8 +40,10 @@
                                         <?php $rows = get_field('addBtn'); ?>
                                         <?php foreach ($rows as $row) { ?>
                                             <div class="pt30">
-                                                <!-- .article-externalLink -->
-                                                <a href="<?php echo $row['link']; ?>" class="article-externalLink hov" target="_blank" rel="noopener"><?php echo $row['text']; ?></a>
+                                                <span class="d-ib js-scroll">
+                                                    <!-- .article-externalLink -->
+                                                    <a href="<?php echo $row['link']; ?>" class="article-externalLink hov" target="_blank" rel="noopener"><?php echo $row['text']; ?></a>
+                                                </span>
                                             </div>
                                         <?php } ?>
                                     </div>
@@ -55,15 +57,21 @@
                                     <div class="cols nega gutter-30 gutter-sm-10">
                                         <div class="col-4 col-sm-3">
                                             <?php if ($prevpost) { ?>
-                                                <a href="<?php echo get_permalink($prevpost->ID) ?>" class="article-pager-item hov">PREV</a>
+                                                <span class="d-b js-scroll">
+                                                    <a href="<?php echo get_permalink($prevpost->ID) ?>" class="article-pager-item hov">PREV</a>
+                                                </span>
                                             <?php } ?>
                                         </div>
                                         <div class="col-4 col-sm-6">
-                                            <a href="<?php echo home_url(); ?>/new" class="article-pager-item hov">ALL VIEW</a>
+                                            <span class="d-b js-scroll">
+                                                <a href="<?php echo home_url(); ?>/new" class="article-pager-item hov">ALL VIEW</a>
+                                            </span>
                                         </div>
                                         <div class="col-4 col-sm-3">
                                             <?php if ($nextpost) { ?>
-                                                <a href="<?php echo get_permalink($nextpost->ID) ?>" class="article-pager-item hov">NEXT</a>
+                                                <span class="d-b js-scroll">
+                                                    <a href="<?php echo get_permalink($nextpost->ID) ?>" class="article-pager-item hov">NEXT</a>
+                                                </span>
                                             <?php } ?>
                                         </div>
                                     </div>

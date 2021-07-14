@@ -33,23 +33,23 @@
                         <div class="feedBasic cols nega gutter-60 gutter-md-30 gutter-sm-20 pt60">
                             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                                     <article class="col-6">
-                                        <a href="<?php the_permalink(); ?>" class="feedBasic-item hov js-scroll">
-                                            <figure class="feedBasic-thumb">
+                                        <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
+                                            <figure class="feedBasic-thumb js-scroll">
                                                 <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
                                                 <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                             </figure>
                                             <div class="feedBasic-subInfo">
                                                 <?php $categorys = get_the_terms($post->ID, 'magazines-cat');
                                                 foreach ($categorys as $category) { ?>
-                                                    <span class="feedBasic-category"><?php echo $category->name; ?></span>
+                                                    <span class="feedBasic-category js-scroll"><?php echo $category->name; ?></span>
                                                 <?php } ?>
-                                                <span class="feedBasic-date"><?php the_time("Y" . ".m" . ".d"); ?></span>
+                                                <span class="feedBasic-date js-scroll"><?php the_time("Y" . ".m" . ".d"); ?></span>
                                             </div>
-                                            <h2 class="feedBasic-ttl js-matchHeight"><?php the_title(); ?></h2>
-                                            <p class="feedBasic-text"><?php $inText = get_the_excerpt();
-                                                                        if (mb_strlen($inText) > 60) { ?><?php echo mb_substr($inText, 0, 60); ?>...<?php } else {
-                                                                                                                                                    echo $inText;
-                                                                                                                                                } ?></p>
+                                            <h2 class="feedBasic-ttl js-matchHeight js-scroll"><?php the_title(); ?></h2>
+                                            <p class="feedBasic-text js-scroll"><?php $inText = get_the_excerpt();
+                                                                                if (mb_strlen($inText) > 60) { ?><?php echo mb_substr($inText, 0, 60); ?>...<?php } else {
+                                                                                                                                                            echo $inText;
+                                                                                                                                                        } ?></p>
                                         </a>
                                     </article>
                                 <?php endwhile; ?>

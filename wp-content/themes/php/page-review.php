@@ -29,8 +29,8 @@
                         <div class="feedReview cols nega gutter-50 gutter-sm-20">
                             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                                     <article class="col-6">
-                                        <a href="<?php the_permalink(); ?>" class="feedReview-item hov js-scroll">
-                                            <figure class="feedReview-thumb">
+                                        <a href="<?php the_permalink(); ?>" class="feedReview-item hov">
+                                            <figure class="feedReview-thumb js-scroll">
                                                 <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size300300'); ?>
                                                 <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="217" height="217" alt="サムネイル">
                                                 <?php $categorys = get_the_terms($post->ID, 'reviews-cat');
@@ -38,7 +38,7 @@
                                                     <figcaption class="feedReview-category feedReview-category-<?php echo $category->slug; ?>"><?php echo $category->name; ?></figcaption>
                                                 <?php } ?>
                                             </figure>
-                                            <h3 class="feedReview-ttl"><?php the_title(); ?></h3>
+                                            <h3 class="feedReview-ttl js-scroll"><?php the_title(); ?></h3>
                                         </a>
                                     </article>
                                 <?php endwhile; ?>
