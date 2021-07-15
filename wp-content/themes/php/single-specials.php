@@ -145,7 +145,7 @@
                     <div class="col-8 col-md-10 col-sm-12">
                         <!-- .search -->
                         <form class="search js-scroll" action="<?php echo home_url(); ?>/" method="get">
-                            <input name="s" type="search" placeholder="キーワード検索" value="<?php if (is_search()) {
+                            <input name="s" type="search" placeholder="Search" value="<?php if (is_search()) {
                                                                                             the_search_query();
                                                                                         } ?>" />
                             <input type="hidden" name="type" value="post">

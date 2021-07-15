@@ -634,7 +634,9 @@ body {
 		border-radius: 9999px;
 		width: 100%;
 		padding: 15px 20px;
-		font-weight: bold;
+		font-family: $en1;
+		font-weight: normal;
+		letter-spacing: .1em;
 		line-height: 1.2;
 		transition: border-color 100ms ease-out;
 		&::placeholder {
@@ -744,6 +746,15 @@ body {
 	overflow: hidden;
 	@include mq(sm) {
 		padding: 0 0 75%;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: #222;
+		z-index: 3;
+		opacity: 0.15;
 	}
 	&-inner {
 		display: flex;
@@ -1230,7 +1241,8 @@ body {
 			border: 1px solid $black;
 			border-left: 4px solid $black;
 			padding: 20px;
-			font-weight: bold;
+			font-family: $en1;
+			letter-spacing: .1em;
 			line-height: 1.2;
 			// shame：アクティブ処理
 			@at-root
@@ -1264,7 +1276,11 @@ body {
 		}
 	}
 	// 調整用
-	.search {}
+	.search {
+		font-family: $en1;
+		font-weight: normal;
+		letter-spacing: .1em;
+	}
 	.hotWords {
 		padding: 30px 25px;
 		@include mq(md) {
@@ -1373,8 +1389,7 @@ body {
 			font-weight: bold;
 			margin-top: 60px;
 		}
-		ul,
-		ol {
+		ul {
 			margin-top: 60px;
 			li {
 				padding-left: 15px;
@@ -1386,6 +1401,28 @@ body {
 				&::before {
 					content: "";
 					background-color: $black;
+					border-radius: 50%;
+					width: 4px;
+					height: 4px;
+					position: absolute;
+					top: calc((.5em * 1.4) - 2px);
+					left: 0;
+				}
+			}
+		}
+		ol {
+			margin-top: 60px;
+			li {
+				padding-left: 15px;
+				line-height: 1.6;
+				position: relative;
+				&:not(:first-child) {
+					margin-top: 5px;
+				}
+				&::before {
+					content: "";
+					background-color: $white;
+					border: 1px solid $black;
 					border-radius: 50%;
 					width: 4px;
 					height: 4px;
@@ -1450,10 +1487,38 @@ body {
 		}
 	}
 	&-externalLink {
-		@extend .btn-round;
+		display: block;
+		font-family: "futura-pt";
+		letter-spacing: .2em;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 15px 60px  15px 30px;
+		line-height: 1.2;
+		text-align: left;
+		position: relative;
+		font-weight: bold;
+		font-style: italic;
 		background-color: $lightgray;
-		max-width: 300px;
 		color: $black;
+		border-radius: 9999px;
+		&::before {
+			content: "";
+			position: absolute;
+			background: #000;
+			right: 30px;
+			top: calc(50% - 3.5px);
+			border-radius: 9999px;
+			width: 5px;
+			height: 5px;	
+		}
+		&:hover {
+			transition: all .8s;
+			text-decoration: none;
+			&::before {
+				transition: all .8s;
+				right: 40px;
+			}
+		}
 	}
 	&-pager {
 		&-item {

@@ -46,7 +46,7 @@
                                         <?php $rows = get_field('addBtn'); ?>
                                         <?php foreach ($rows as $row) { ?>
                                             <div class="pt30">
-                                                <span class="d-ib js-scroll">
+                                                <span class="js-scroll">
                                                     <!-- .article-externalLink -->
                                                     <a href="<?php echo $row['link']; ?>" class="article-externalLink hov" target="_blank" rel="noopener"><?php echo $row['text']; ?></a>
                                                 </span>

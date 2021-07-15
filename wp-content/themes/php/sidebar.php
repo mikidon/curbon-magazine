@@ -2,7 +2,7 @@
 <aside class="sidebar col-4 col-sm-12 sm-mt60">
     <!-- .search -->
     <form class="search js-scroll" action="<?php echo home_url(); ?>/" method="get">
-        <input name="s" type="search" placeholder="キーワード検索" value="<?php if (is_search()) {
+        <input name="s" type="search" placeholder="Search" value="<?php if (is_search()) {
                                                                         the_search_query();
                                                                     } ?>" />
         <input type="hidden" name="type" value="post">
@@ -26,25 +26,25 @@
     <!-- .sidebar-nav -->
     <nav class="sidebar-nav mt30 js-scroll">
         <ul>
-            <li><a href="<?php echo home_url(); ?>/ranking" class="sidebar-nav-item hov">人気ランキング</a></li>
-            <li><a href="<?php echo home_url(); ?>/special" class="sidebar-nav-item hov">特集</a></li>
+            <li><a href="<?php echo home_url(); ?>/ranking" class="sidebar-nav-item hov">Ranking</a></li>
+            <li><a href="<?php echo home_url(); ?>/special" class="sidebar-nav-item hov">Special</a></li>
         </ul>
     </nav>
     <!-- .sidebar-nav -->
     <nav class="sidebar-nav mt30 js-scroll">
         <ul>
-            <li><a href="<?php echo home_url(); ?>/magazine" class="sidebar-nav-item hov">記事一覧</a></li>
-            <li><a href="<?php echo home_url(); ?>/magazines-cat/study" class="sidebar-nav-item hov">写真を学ぶ</a></li>
-            <li><a href="<?php echo home_url(); ?>/magazines-cat/job" class="sidebar-nav-item hov">写真を仕事にする</a></li>
-            <li><a href="<?php echo home_url(); ?>/magazines-cat/shop" class="sidebar-nav-item hov">おかいもの</a></li>
-            <li><a href="<?php echo home_url(); ?>/magazines-cat/read" class="sidebar-nav-item hov">よみもの</a></li>
-            <li><a href="<?php echo home_url(); ?>/review" class="sidebar-nav-item hov">機材レビュー</a></li>
+            <li><a href="<?php echo home_url(); ?>/magazine" class="sidebar-nav-item hov">All</a></li>
+            <li><a href="<?php echo home_url(); ?>/magazines-cat/study" class="sidebar-nav-item hov">Learn</a></li>
+            <li><a href="<?php echo home_url(); ?>/magazines-cat/job" class="sidebar-nav-item hov">Work</a></li>
+            <li><a href="<?php echo home_url(); ?>/magazines-cat/shop" class="sidebar-nav-item hov">Shop</a></li>
+            <li><a href="<?php echo home_url(); ?>/magazines-cat/read" class="sidebar-nav-item hov">Gallery</a></li>
+            <li><a href="<?php echo home_url(); ?>/review" class="sidebar-nav-item hov">Review</a></li>
         </ul>
     </nav>
     <!-- .sidebar-nav -->
     <nav class="sidebar-nav mt30 js-scroll">
         <ul>
-            <li><a href="<?php echo home_url(); ?>/new" class="sidebar-nav-item hov">お知らせ</a></li>
+            <li><a href="<?php echo home_url(); ?>/new" class="sidebar-nav-item hov">News</a></li>
         </ul>
     </nav>
     <!-- .sidebar-bnr -->

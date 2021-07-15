@@ -36,7 +36,8 @@
                         <!-- .footer-subLink -->
                         <div class="footer-subLink mt30">
                             <ul>
-                                <li><a href="https://www.curbon.jp/" target="_blank" rel="noopener" class="hov">運営会社</a></li>
+                                <li><a href="https://www.curbon.jp/" target="_blank" rel="noopener" class="hov">curbon.jp</a></li>
+                                <li><a href="https://company.curbon.jp/" target="_blank" rel="noopener" class="hov">運営会社</a></li>
                                 <li><a href="https://www.curbon.jp/pages/terms" target="_blank" rel="noopener" class="hov">利用規約</a></li>
                                 <li><a href="https://www.curbon.jp/pages/privacy" target="_blank" rel="noopener" class="hov">プライバシー<br class="d-n md-d-b sm-d-n">ポリシー</a></li>
                                 <li><a href="https://www.curbon.jp/pages/commercial-act" target="_blank" rel="noopener" class="hov">特定商取引法に<br class="d-n md-d-b sm-d-n">基づく表記</a></li>

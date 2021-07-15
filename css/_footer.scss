@@ -43,9 +43,7 @@
 		position: relative;
 		color: $white;
 		text-align: left;
-		@include mq(md) {
-			font-size: 90%;
-		}
+		font-size: 13px;
 		&::before {
 			content: "";
 			position: absolute;
@@ -65,8 +63,11 @@
 	}
 	/* .footer-subLink：関連するリンク */
 	&-subLink {
-		font-size: 13px;
+		font-size: 12px;
 		line-height: 1.2;
+		@include mq(sm) {
+			font-size: 13px;
+		}
 		ul {
 			display: flex;
 			align-items: center;
