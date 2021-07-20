@@ -56,7 +56,7 @@
                             <article class="col-4 col-md-6">
                                 <a href="<?php the_permalink(); ?>" class="feedSpecial-item hov">
                                     <figure class="feedSpecial-thumb js-scroll">
-                                        <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
+                                        <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560448'); ?>
                                         <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                     </figure>
                                     <h2 class="feedSpecial-ttl js-scroll"><?php the_title(); ?></h2>

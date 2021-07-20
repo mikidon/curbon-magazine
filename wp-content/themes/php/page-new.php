@@ -31,7 +31,7 @@
                                     <article class="col-12 col-sm-6">
                                         <a href="<?php the_permalink(); ?>" class="feedNews-item hov">
                                             <figure class="feedNews-thumb js-scroll">
-                                                <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
+                                                <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560448'); ?>
                                                 <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="282" height="202" alt="サムネイル">
                                             </figure>
                                             <div class="feedNews-info">

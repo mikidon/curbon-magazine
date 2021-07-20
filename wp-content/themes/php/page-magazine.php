@@ -35,7 +35,7 @@
                                     <article class="col-6">
                                         <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
                                             <figure class="feedBasic-thumb js-scroll">
-                                                <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560400'); ?>
+                                                <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560448'); ?>
                                                 <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                             </figure>
                                             <div class="feedBasic-subInfo">
