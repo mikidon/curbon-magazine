@@ -371,7 +371,7 @@ add_theme_support('post-thumbnails');
 // 画像サイズ登録
 //add_image_size('fixwidth', 固定する値, 9999)
 //add_image_size('fixheight', 9999, 固定する値)
-add_image_size('size560448', 560, 448, true); // 通常サムネイル（×2）
+add_image_size('size560720', 560, 720, true); // 通常サムネイル（×2）
 add_image_size('size1160450', 1160, 450, true); // 特集大サムネイル
 add_image_size('size300300', 300, 300, true); // 記事関係者サムネイル（×2）
 add_image_size('size320350', 320, 350, true); // 人気記事ランキングサムネイル

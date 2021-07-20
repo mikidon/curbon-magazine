@@ -39,7 +39,7 @@
                                                 <article class="col-6">
                                                     <a href="#" class="feedRanking-item hov">
                                                         <figure class="feedRanking-thumb js-scroll">
-                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560448'); ?>
+                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560720'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="282" height="202" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedRanking-subInfo">

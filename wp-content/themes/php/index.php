@@ -125,7 +125,7 @@
                                                 <article class="col-4 col-md-6">
                                                     <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
                                                         <figure class="feedBasic-thumb js-scroll">
-                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560448'); ?>
+                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560720'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedBasic-subInfo">
@@ -167,7 +167,7 @@
                                                 <article class="col-4 col-md-6">
                                                     <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
                                                         <figure class="feedBasic-thumb js-scroll">
-                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560448'); ?>
+                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560720'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedBasic-subInfo">
@@ -209,7 +209,7 @@
                                                 <article class="col-4 col-md-6">
                                                     <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
                                                         <figure class="feedBasic-thumb js-scroll">
-                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560448'); ?>
+                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560720'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedBasic-subInfo js-scroll">
@@ -251,7 +251,7 @@
                                                 <article class="col-4 col-md-6">
                                                     <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
                                                         <figure class="feedBasic-thumb js-scroll">
-                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560448'); ?>
+                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560720'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedBasic-subInfo js-scroll">
@@ -293,7 +293,7 @@
                                                 <article class="col-4 col-md-6">
                                                     <a href="<?php the_permalink(); ?>" class="feedBasic-item hov">
                                                         <figure class="feedBasic-thumb js-scroll">
-                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560448'); ?>
+                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560720'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="280" height="200" alt="サムネイル">
                                                         </figure>
                                                         <div class="feedBasic-subInfo js-scroll">
@@ -365,7 +365,7 @@
                                                 <article class="swiper-slide js-scroll">
                                                     <a href="<?php the_permalink(); ?>" class="rankingSlide-item hov">
                                                         <figure class="rankingSlide-thumb">
-                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560448'); ?>
+                                                            <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'size560720'); ?>
                                                             <img class="img-rspsv-full" src="<?php echo $imgset[0]; ?>" width="320" height="350" alt="サムネイル">
                                                         </figure>
                                                         <div class="rankingSlide-info">
