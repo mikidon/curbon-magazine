@@ -1,11 +1,25 @@
 <!-- .header -->
 <header class="header">
     <div class="header-inner">
-        <h1 class="logo">
-            <a href="<?php echo home_url(); ?>/" class="hov">
-                <img src="<?php echo home_url(); ?>/img/common/logo.png" width="139" height="38" alt="">
-            </a>
-        </h1>
+        <?php if (is_home()) { ?>
+            <h1 class="logo">
+                <a href="<?php echo home_url(); ?>/" class="hov">
+                    <img src="<?php echo home_url(); ?>/img/common/logo.png" width="139" height="38" alt="ENCOUNTER｜カメラ・写真がに関する情報をお届けするWEBメディア">
+                </a>
+            </h1>
+        <?php } elseif (is_single()) { ?>
+            <div class="logo">
+                <a href="<?php echo home_url(); ?>/" class="hov">
+                    <img src="<?php echo home_url(); ?>/img/common/logo.png" width="139" height="38" alt="<?php the_title(); ?>">
+                </a>
+            </div>
+        <?php } else { ?>
+            <h1 class="logo">
+                <a href="<?php echo home_url(); ?>/" class="hov">
+                    <img src="<?php echo home_url(); ?>/img/common/logo.png" width="139" height="38" alt="<?php the_title(); ?>">
+                </a>
+            </h1>
+        <?php } ?>
         <nav class="gnav">
             <ul>
                 <li><a href="<?php echo home_url(); ?>/special">Special</a></li>
