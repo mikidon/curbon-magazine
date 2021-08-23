@@ -9,7 +9,7 @@
         <div class="cols ptb50 sm-ptb30 z2">
             <div class="col-12">
                 <!-- .contentTtl -->
-                <div class="contentTtl"><span class="d-ib js-scroll">CURBON MAGAZINE</span></div>
+                <div class="contentTtl"><span class="d-ib js-scroll">ENCOUNTER MAGAZINE</span></div>
             </div>
         </div>
         <div class="cols">

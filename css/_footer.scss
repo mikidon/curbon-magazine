@@ -43,7 +43,9 @@
 		position: relative;
 		color: $white;
 		text-align: left;
-		font-size: 13px;
+		@include mq(md) {
+			font-size: 90%;
+		}
 		&::before {
 			content: "";
 			position: absolute;
@@ -63,61 +65,39 @@
 	}
 	/* .footer-subLink：関連するリンク */
 	&-subLink {
-		font-size: 12px;
-		line-height: 1.2;
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 13px;
 		@include mq(sm) {
-			font-size: 13px;
+			display: block;
 		}
-		ul {
-			display: flex;
-			align-items: center;
-			justify-content: flex-start;
+		li {
+			position: relative;
+			font-family: $en1;
+			color: $white;
 			@include mq(sm) {
-				display: block;
+				padding: 15px 0;
+				border-bottom: 1px dashed #ffffff4f;
 				text-align: center;
-			}
-			li {
-				padding: 0 15px 0 19px;
-				position: relative;
-				font-family: $en1;
-				color: $white;
-				@include mq(md) {
-					padding: 0 13px 0 17px;
-					font-size: 90%;
-				}
-				@include mq(sm) {
-					padding: 15px 0;
-					border-bottom: 1px dashed #ffffff4f;
-				}
 				&:first-child {
-					padding: 0 15px 0 0;
-					@include mq(md) {
-						padding: 0 9px 0 0;
-					}
+					border-top: 1px dashed #ffffff4f;
+				}
+			}
+			&:not(:last-child) {
+				padding-right: 20px;
+				&::after {
+					content: "";
+					background-color: $white;
+					width: 4px;
+					height: 4px;
+					border-radius: 9999px;
+					position: absolute;
+					top: calc(50% - 2px);
+					right: 8px;
 					@include mq(sm) {
-						padding: 15px 0;
-						border-top: 1px dashed #ffffff4f;
+						display: none;
 					}
 				}
-				&:not(:first-child) {
-					@include mq(sm) {
-						padding-top: 1em;
-					}
-					&::before {
-						content: "";
-						background-color: $white;
-						width: 4px;
-						height: 4px;
-						border-radius: 9999px;
-						position: absolute;
-						top: calc(50% - 3px);
-						left: 0;
-						@include mq(sm) {
-							display: none;
-						}
-					}
-				}
-				a {}
 			}
 		}
 	}

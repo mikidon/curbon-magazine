@@ -34,16 +34,14 @@
                     <div class="ml50 pl50 sm-ml0 sm-pl0 sm-mt35 footer-txt">
                         <p>日本国内最大級の写真教育サービス運営からスタートしたCURBONはクリエイターの可能性を活かした新しいビジネスを展開するクリエイティブカンパニーです。最高峰の質とカリスマ性を誇るアーティストのネットワークを有するからこそ生まれる価値や、成し遂げられる仕事が、ここにはあります。</p>
                         <!-- .footer-subLink -->
-                        <div class="footer-subLink mt30">
-                            <ul>
-                                <li><a href="https://www.curbon.jp/" target="_blank" rel="noopener" class="hov">curbon.jp</a></li>
-                                <li><a href="https://company.curbon.jp/" target="_blank" rel="noopener" class="hov">運営会社</a></li>
-                                <li><a href="https://www.curbon.jp/pages/terms" target="_blank" rel="noopener" class="hov">利用規約</a></li>
-                                <li><a href="https://www.curbon.jp/pages/privacy" target="_blank" rel="noopener" class="hov">プライバシー<br class="d-n md-d-b sm-d-n">ポリシー</a></li>
-                                <li><a href="https://www.curbon.jp/pages/commercial-act" target="_blank" rel="noopener" class="hov">特定商取引法に<br class="d-n md-d-b sm-d-n">基づく表記</a></li>
-                                <li><a href="https://company.curbon.jp/contact" target="_blank" rel="noopener" class="hov">お問い合わせ</a></li>
-                            </ul>
-                        </div>
+                        <ul class="footer-subLink mt30">
+                            <li><a href="https://www.curbon.jp/" target="_blank" rel="noopener" class="hov">curbon.jp</a></li>
+                            <li><a href="https://company.curbon.jp/" target="_blank" rel="noopener" class="hov">運営会社</a></li>
+                            <li><a href="https://www.curbon.jp/pages/terms" target="_blank" rel="noopener" class="hov">利用規約</a></li>
+                            <li><a href="https://www.curbon.jp/pages/privacy" target="_blank" rel="noopener" class="hov">プライバシーポリシー</a></li>
+                            <li><a href="https://www.curbon.jp/pages/commercial-act" target="_blank" rel="noopener" class="hov">特定商取引法に基づく表記</a></li>
+                            <li><a href="https://company.curbon.jp/contact" target="_blank" rel="noopener" class="hov">お問い合わせ</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

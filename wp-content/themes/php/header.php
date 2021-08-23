@@ -4,7 +4,7 @@
         <?php if (is_home()) { ?>
             <h1 class="logo">
                 <a href="<?php echo home_url(); ?>/" class="hov">
-                    <img src="<?php echo home_url(); ?>/img/common/logo.png" width="139" height="38" alt="ENCOUNTER｜カメラ・写真がに関する情報をお届けするWEBメディア">
+                    <img src="<?php echo home_url(); ?>/img/common/logo.png" width="139" height="38" alt="ENCOUNTER｜カメラ・写真に関する情報をお届けするWEBメディア">
                 </a>
             </h1>
         <?php } elseif (is_single()) { ?>

@@ -629,7 +629,10 @@ body {
 	display: flex;
 	align-items: center;
 	input[type="search"] {
+		-webkit-appearance: none;
+  		appearance: none;
 		display: block;
+		background-color: $white;
 		border: 1px solid #222;
 		border-radius: 9999px;
 		width: 100%;
