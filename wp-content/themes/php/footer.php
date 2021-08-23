@@ -28,7 +28,7 @@
         <nav class="cols ai-c">
             <div class="col-12">
                 <div class="d-f jc-c sm-d-b ai-c ta-c">
-                    <a href="<?php echo home_url(); ?>/" class="hov">
+                    <a href="https://www.curbon.jp/" class="hov">
                         <img src="<?php echo home_url(); ?>/img/common/logo-w.png" width="139" height="38" alt="">
                     </a>
                     <div class="ml50 pl50 sm-ml0 sm-pl0 sm-mt35 footer-txt">
@@ -46,6 +46,20 @@
                 </div>
             </div>
         </nav>
+    </div>
+    <div class="bgc-gray ptb50 js-scroll">
+        <div class="cols ai-c">
+            <div class="col-12 ft-sub">
+                <div class="d-f jc-c sm-d-b ai-c ta-c">
+                    <a href="https://creatorsbase.jp/" class="hov">
+                        <img src="<?php echo home_url(); ?>/img/common/logo-creatorsbase.png" width="188" height="38" alt="">
+                    </a>
+                    <div class="ml50 sm-ml0 sm-mt35 ta-l fz90">
+                        <p>国内最大級の法人向け撮影サービス「Creators Base」CURBONが運営するビジネスを加速させる総合撮影サービス。写真撮影で、悩むことはもうありません。撮影予約、納品、決済まで、全ておまかせ。　( <a href="https://creatorsbase.jp/" target="_blank" rel="noopener" class="hov bb-black">creatorsbase.jp</a> )</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="copyright"><small>© 2021, <a href="<?php echo home_url(); ?>/" class="hov">CURBON</a>.</small></div>
 </footer>

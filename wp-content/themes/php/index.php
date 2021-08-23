@@ -490,7 +490,7 @@
         </section>
         <!-- .original -->
         <section class="original mt150 ptb100">
-            <h2 class="original-ttl"><span class="d-ib js-scroll">GALLERY</span></h2>
+            <h2 class="original-ttl"><span class="d-ib js-scroll">EXHIBITION</span></h2>
             <div class="cols">
                 <div class="col-12">
                     <p class="ta-c js-scroll">内容かたまり次第バナー・リンク設置</p>
